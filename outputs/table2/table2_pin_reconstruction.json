@@ -1,0 +1,49 @@
+{
+  "rows": [
+    {
+      "dataset": "full_test_data_4digit.csv",
+      "joint_accuracy_pct": 74.3333,
+      "lambda": 1.5,
+      "mlp_accuracy_pct": 27.0,
+      "num_samples": 300,
+      "pin_length": 4,
+      "top_k": 3
+    },
+    {
+      "dataset": "full_test_data_6digit.csv",
+      "joint_accuracy_pct": 70.3333,
+      "lambda": 1.5,
+      "mlp_accuracy_pct": 20.3333,
+      "num_samples": 300,
+      "pin_length": 6,
+      "top_k": 3
+    },
+    {
+      "dataset": "full_test_data_8digit.csv",
+      "joint_accuracy_pct": 61.6667,
+      "lambda": 1.5,
+      "mlp_accuracy_pct": 8.6667,
+      "num_samples": 300,
+      "pin_length": 8,
+      "top_k": 3
+    },
+    {
+      "dataset": "full_test_data_11digit.csv",
+      "joint_accuracy_pct": 55.0,
+      "lambda": 1.5,
+      "mlp_accuracy_pct": 6.6667,
+      "num_samples": 300,
+      "pin_length": 11,
+      "top_k": 3
+    },
+    {
+      "dataset": "full_test_data_16digit.csv",
+      "joint_accuracy_pct": 41.0,
+      "lambda": 1.5,
+      "mlp_accuracy_pct": 0.3333,
+      "num_samples": 300,
+      "pin_length": 16,
+      "top_k": 3
+    }
+  ]
+}

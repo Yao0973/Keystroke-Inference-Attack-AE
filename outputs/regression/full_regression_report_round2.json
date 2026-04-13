@@ -1,0 +1,358 @@
+{
+  "total": 35,
+  "passed": 35,
+  "failed": 0,
+  "timeout": 0,
+  "results": [
+    {
+      "path": "scripts/quick_test.sh",
+      "kind": "script",
+      "timeout_sec": 180,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 8.55,
+      "stdout_tail": "[artifact] Running quick test...\n[artifact-ok] Completed 'quick-test'. Outputs saved under /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/outputs/quick_test\n[artifact] Quick test finished successfully.\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "scripts/reproduce_table1.sh",
+      "kind": "script",
+      "timeout_sec": 180,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 3.17,
+      "stdout_tail": "[artifact] Reproducing Table 1 placeholder results...\n[artifact-ok] Completed 'table1'. Outputs saved under /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/outputs/table1\n  dataset: test_data.csv\n  num_samples: 3000\n  top1_accuracy_pct: 73.0667\n  top3_accuracy_pct: 98.1667\n  confusion_matrix: [[186, 0, 0, 0, 0, 1, 0, 0, 59, 54], [0, 246, 23, 3, 0, 0, 26, 2, 0, 0], [0, 5, 214, 5, 0, 1, 0, 0, 59, 16], [0, 1, 39, 252, 0, 0, 0, 0, 6, 2], [0, 0, 3, 0, 230, 0, 7, 60, 0, 0], [9, 6, 37, 1, 2, 167, 0, 0, 78, 0], [0, 12, 0, 0, 5, 0, 227, 56, 0, 0], [0, 0, 0, 0, 23, 0, 26, 251, 0, 0], [26, 0, 24, 1, 0, 11, 0, 0, 187, 51], [12, 0, 4, 0, 0, 0, 0, 0, 52, 232]]\n[artifact] Table 1 reproduction finished successfully.\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "scripts/reproduce_table2.sh",
+      "kind": "script",
+      "timeout_sec": 180,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 6.61,
+      "stdout_tail": "[artifact] Reproducing Table 2 placeholder results...\n[artifact-ok] Completed 'table2'. Outputs saved under /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/outputs/table2\n  rows: [{'pin_length': 4, 'dataset': 'full_test_data_4digit.csv', 'num_samples': 300, 'mlp_accuracy_pct': 27.0, 'joint_accuracy_pct': 74.3333, 'top_k': 3, 'lambda': 1.5}, {'pin_length': 6, 'dataset': 'full_test_data_6digit.csv', 'num_samples': 300, 'mlp_accuracy_pct': 20.3333, 'joint_accuracy_pct': 70.3333, 'top_k': 3, 'lambda': 1.5}, {'pin_length': 8, 'dataset': 'full_test_data_8digit.csv', 'num_samples': 300, 'mlp_accuracy_pct': 8.6667, 'joint_accuracy_pct': 61.6667, 'top_k': 3, 'lambda': 1.5}, {'pin_length': 11, 'dataset': 'full_test_data_11digit.csv', 'num_samples': 300, 'mlp_accuracy_pct': 6.6667, 'joint_accuracy_pct': 55.0, 'top_k': 3, 'lambda': 1.5}, {'pin_length': 16, 'dataset': 'full_test_data_16digit.csv', 'num_samples': 300, 'mlp_accuracy_pct': 0.3333, 'joint_accuracy_pct': 41.0, 'top_k': 3, 'lambda': 1.5}]\n[artifact] Table 2 reproduction finished successfully.\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "scripts/reproduce_figure1.sh",
+      "kind": "script",
+      "timeout_sec": 180,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 3.47,
+      "stdout_tail": "[artifact] Reproducing Figure 1 placeholder...\n[artifact-ok] Completed 'figure1'. Outputs saved under /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/outputs/figure1\n  source_dataset: test_data.csv\n  top1_accuracy_pct: 73.0667\n[artifact] Figure 1 reproduction finished successfully.\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "scripts/reproduce_ablation.sh",
+      "kind": "script",
+      "timeout_sec": 180,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 5.06,
+      "stdout_tail": "[artifact] Reproducing ablation results...\n[artifact-ok] Completed 'ablation'. Outputs saved under /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/outputs/ablation\n  rows: [{'setting': 'mlp_only', 'use_kinematic': False, 'top_k': 3, 'mlp_accuracy_pct': 20.3333, 'joint_accuracy_pct': 20.3333}, {'setting': 'joint_top3', 'use_kinematic': True, 'top_k': 3, 'mlp_accuracy_pct': 20.3333, 'joint_accuracy_pct': 70.3333}, {'setting': 'joint_top10', 'use_kinematic': True, 'top_k': 10, 'mlp_accuracy_pct': 20.3333, 'joint_accuracy_pct': 71.6667}]\n[artifact] Ablation reproduction finished successfully.\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "scripts/reproduce_robustness.sh",
+      "kind": "script",
+      "timeout_sec": 240,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 22.14,
+      "stdout_tail": "[artifact] Reproducing robustness results...\n[artifact-ok] Completed 'robustness'. Outputs saved under /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/outputs/robustness\n  hand_size_robustness_rows: [{'hand_size': 'small', 'posture': 'high_arch', 'joint_accuracy_pct': 64.0, 'mlp_accuracy_pct': 12.0}, {'hand_size': 'small', 'posture': 'low_profile', 'joint_accuracy_pct': 70.0, 'mlp_accuracy_pct': 12.0}, {'hand_size': 'medium', 'posture': 'high_arch', 'joint_accuracy_pct': 66.0, 'mlp_accuracy_pct': 20.0}, {'hand_size': 'medium', 'posture': 'low_profile', 'joint_accuracy_pct': 82.0, 'mlp_accuracy_pct': 22.0}, {'hand_size': 'large', 'posture': 'high_arch', 'joint_accuracy_pct': 52.0, 'mlp_accuracy_pct': 14.0}, {'hand_size': 'large', 'posture': 'low_profile', 'joint_accuracy_pct': 74.0, 'mlp_accuracy_pct': 18.0}]\n  battery_background_summary_rows: [{'battery': '100pct', 'load': 'busy', 'joint_accuracy_mean_pct': 65.06666666666666, 'joint_accuracy_std_pct': 4.949266419908924, 'mlp_accuracy_mean_pct': 16.266666666666666, 'mlp_accuracy_std_pct': 4.0614330100640705}, {'battery': '100pct', 'load': 'idle', 'joint_accuracy_mean_pct': 66.8, 'joint_accuracy_std_pct': 6.493953231385993, 'mlp_accuracy_mean_pct': 17.6, 'mlp_accuracy_std_pct': 4.610546915187272}, {'battery': '30pct', 'load': 'busy', 'joint_accuracy_mean_pct': 62.8, 'joint_accuracy_std_pct': 5.747048932153915, 'mlp_accuracy_mean_pct': 17.066666666666666, 'mlp_accuracy_std_pct': 5.750362307426087}, {'battery': '30pct', 'load': 'idle', 'joint_accuracy_mean_pct': 66.0, 'joint_accuracy_std_pct': 8.141603913585723, 'mlp_accuracy_mean_pct': 14.666666666666666, 'mlp_accuracy_std_pct': 6.531972647421808}, {'battery': '3pct', 'load': 'busy', 'joint_accuracy_mean_pct': 68.93333333333334, 'joint_accuracy_std_pct': 6.0882400303098, 'mlp_accuracy_mean_pct': 17.333333333333332, 'mlp_accuracy_std_pct': 4.760952285695233}, {'battery': '3pct', 'load': 'idle', 'joint_accuracy_mean_pct': 64.4, 'joint_accuracy_std_pct': 4.792851820307882, 'mlp_accuracy_mean_pct': 15.866666666666667, 'mlp_accuracy_std_pct': 4.307247491424303}, {'battery': '70pct', 'load': 'busy', 'joint_accuracy_mean_pct': 66.93333333333334, 'joint_accuracy_std_pct': 5.993647430722757, 'mlp_accuracy_mean_pct': 17.333333333333332, 'mlp_accuracy_std_pct': 4.820590756130958}, {'battery': '70pct', 'load': 'idle', 'joint_accuracy_mean_pct': 63.333333333333336, 'joint_accuracy_std_pct': 6.747133430117527, 'mlp_accuracy_mean_pct': 18.533333333333335, 'mlp_accuracy_std_pct': 5.730453318725774}]\n[artifact] Robustness reproduction finished successfully.\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "scripts/reproduce_main_results.sh",
+      "kind": "script",
+      "timeout_sec": 300,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 43.62,
+      "stdout_tail": "[artifact] Reproducing main results...\n[artifact-ok] Completed 'main-results'. Outputs saved under /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/outputs/main_results\n[artifact] Main-result reproduction finished successfully.\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "legacy/inference/Different_Attempts_4digit.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 6.3,
+      "stdout_tail": "📊 Successfully loaded 300 test samples\n\n============================================================\n🔐 4-digit PIN Top-N attack success rate\n🔍 MLP-only Accuracy (Top-1): 27.00% (81/300)\n🎯 Top-1 Success Rate: 75.00%\n🎯 Top-2 Success Rate: 89.00%\n🎯 Top-3 Success Rate: 94.00%\n🎯 Top-4 Success Rate: 94.67%\n🎯 Top-5 Success Rate: 96.67%\n============================================================\n💾 Saved Top-N results to /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/outputs/legacy/inference/topn_results_4digit.npz\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "legacy/inference/Different_Attempts_6digit.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 38.47,
+      "stdout_tail": "📊 Successfully loaded 300 6-digit PIN test samples\n\n============================================================\n🔐 6-digit PIN Top-N attack success rate\n🔍 MLP-only Accuracy (Top-1): 20.33% (61/300)\n🎯 Top-1 Success Rate: 71.00%\n🎯 Top-2 Success Rate: 84.00%\n🎯 Top-3 Success Rate: 89.67%\n🎯 Top-4 Success Rate: 91.67%\n🎯 Top-5 Success Rate: 94.00%\n============================================================\n💾 Saved Top-N results to /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/outputs/legacy/inference/topn_results_6digit.npz\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "legacy/inference/Different_Attempts_8digit.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 5.92,
+      "stdout_tail": "📊 Successfully loaded 300 test samples\n\n============================================================\n🔐 8-digit PIN Top-N attack success rate\n🔍 MLP-only Accuracy (Top-1): 8.67% (26/300)\n🎯 Top-1 Success Rate: 62.67%\n🎯 Top-2 Success Rate: 83.00%\n🎯 Top-3 Success Rate: 88.67%\n🎯 Top-4 Success Rate: 90.67%\n🎯 Top-5 Success Rate: 91.67%\n============================================================\n💾 Saved Top-N results to /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/outputs/legacy/inference/topn_results_8digit.npz\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "legacy/inference/Inference_11digit.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 5.09,
+      "stdout_tail": "📊 Successfully loaded 300 test samples\n\n============================================================\n🔐 11-digit PIN inference results\n🔍 MLP-only Accuracy (Top-1):       6.67% (20/300)\n🎯 Joint Model Accuracy:          55.00% (165/300)\n   (λ=1.5, Mode=Top-3)\n============================================================\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "legacy/inference/Inference_16digit.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 6.37,
+      "stdout_tail": "📊 Successfully loaded 300 test samples\n\n============================================================\n🔐 16-digit PIN inference results\n🔍 MLP-only Accuracy (Top-1):       0.33% (1/300)\n🎯 Joint Model Accuracy:          41.00% (123/300)\n   (λ=1.5, Mode=Top-3)\n============================================================\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "legacy/inference/Inference_4digit.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 6.44,
+      "stdout_tail": "📊 Successfully loaded 300 test samples\n\n============================================================\n🔐 4-digit PIN inference results\n🔍 MLP-only Accuracy (Top-1):       27.00% (81/300)\n🎯 Joint Model Accuracy:          74.33% (223/300)\n   (λ=1.5, Mode=Top-3)\n============================================================\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "legacy/inference/Inference_6digit.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 7.14,
+      "stdout_tail": "📊 Successfully loaded 300 test samples\n\n============================================================\n🔍 MLP-only Accuracy (Top-1):       20.33% (61/300)\n🎯 Joint Model Accuracy:    70.33% (211/300)\n   (λ=1.5, Mode=Top-3)\n============================================================\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "legacy/inference/Inference_8digit.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 8.09,
+      "stdout_tail": "📊 Successfully loaded 300 test samples\n\n============================================================\n🔐 8-digit PIN inference results\n🔍 MLP-only Accuracy (Top-1):       8.67% (26/300)\n🎯 Joint Model Accuracy:          61.67% (185/300)\n   (λ=1.5, Mode=Top-3)\n============================================================\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "legacy/inference/infer_PINs.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 12.04,
+      "stdout_tail": " | 510098   | ✅\n174  | 140493   | 140493   | ✅\n175  | 497450   | 497450   | ✅\n176  | 073615   | 073615   | ✅\n177  | 836984   | 836984   | ✅\n178  | 915388   | 912399   | ❌\n179  | 854910   | 854910   | ✅\n180  | 799132   | 799132   | ✅\n181  | 956274   | 956274   | ✅\n182  | 007248   | 007248   | ✅\n183  | 849496   | 849496   | ✅\n184  | 897584   | 897984   | ❌\n185  | 332097   | 332097   | ✅\n186  | 937556   | 937556   | ✅\n187  | 088701   | 088701   | ✅\n188  | 456241   | 456247   | ❌\n189  | 338506   | 338506   | ✅\n190  | 945535   | 945590   | ❌\n191  | 847084   | 847084   | ✅\n192  | 390429   | 390429   | ✅\n193  | 014675   | 014675   | ✅\n194  | 074919   | 074919   | ✅\n195  | 089795   | 089795   | ✅\n196  | 908158   | 808158   | ❌\n197  | 576978   | 576978   | ✅\n198  | 390089   | 390089   | ✅\n199  | 641609   | 641790   | ❌\n200  | 176301   | 176301   | ✅\n201  | 100111   | 100111   | ✅\n202  | 392344   | 392344   | ✅\n203  | 357095   | 357095   | ✅\n204  | 561929   | 561929   | ✅\n205  | 691563   | 691563   | ✅\n206  | 493995   | 493995   | ✅\n207  | 876914   | 876914   | ✅\n208  | 494716   | 494717   | ❌\n209  | 714453   | 714453   | ✅\n210  | 291855   | 291855   | ✅\n211  | 134071   | 134071   | ✅\n212  | 389895   | 389895   | ✅\n213  | 205807   | 205807   | ✅\n214  | 875765   | 875765   | ✅\n215  | 566601   | 566601   | ✅\n216  | 825429   | 825429   | ✅\n217  | 760309   | 760209   | ❌\n218  | 546138   | 546138   | ✅\n219  | 336087   | 886087   | ❌\n220  | 968764   | 968764   | ✅\n221  | 844303   | 844303   | ✅\n222  | 666966   | 666966   | ✅\n223  | 140116   | 140117   | ❌\n224  | 974724   | 974724   | ✅\n225  | 289846   | 289846   | ✅\n226  | 774152   | 447152   | ❌\n227  | 725289   | 725289   | ✅\n228  | 379496   | 379496   | ✅\n229  | 190666   | 190666   | ✅\n230  | 186320   | 196320   | ❌\n231  | 539585   | 539585   | ✅\n232  | 446397   | 776397   | ❌\n233  | 957627   | 957627   | ✅\n234  | 430790   | 430798   | ❌\n235  | 948324   | 948326   | ❌\n236  | 816822   | 816822   | ✅\n237  | 795397   | 795397   | ✅\n238  | 623207   | 623207   | ✅\n239  | 447719   | 447718   | ❌\n240  | 687268   | 687268   | ✅\n241  | 414337   | 414334   | ❌\n242  | 138651   | 138651   | ✅\n243  | 477305   | 477305   | ✅\n244  | 792863   | 792863   | ✅\n245  | 790861   | 790861   | ✅\n246  | 378369   | 378369   | ✅\n247  | 211166   | 211166   | ✅\n248  | 603667   | 603667   | ✅\n249  | 768844   | 768844   | ✅\n250  | 594407   | 894407   | ❌\n251  | 932793   | 932793   | ✅\n252  | 746039   | 746039   | ✅\n253  | 304764   | 204767   | ❌\n254  | 289178   | 289178   | ✅\n255  | 779030   | 779030   | ✅\n256  | 975626   | 975626   | ✅\n257  | 761373   | 761373   | ✅\n258  | 207063   | 207063   | ✅\n259  | 761490   | 761490   | ✅\n260  | 967691   | 967691   | ✅\n261  | 593074   | 593074   | ✅\n262  | 299624   | 299684   | ❌\n263  | 616047   | 616047   | ✅\n264  | 837355   | 837355   | ✅\n265  | 303275   | 303675   | ❌\n266  | 743644   | 473644   | ❌\n267  | 444652   | 444658   | ❌\n268  | 241294   | 241297   | ❌\n269  | 681411   | 681411   | ✅\n270  | 701599   | 701599   | ✅\n271  | 770661   | 779776   | ❌\n272  | 711609   | 711609   | ✅\n273  | 333241   | 333242   | ❌\n274  | 522537   | 522537   | ✅\n275  | 881989   | 881989   | ✅\n276  | 650030   | 650030   | ✅\n277  | 382460   | 382460   | ✅\n278  | 838853   | 838853   | ✅\n279  | 037974   | 037974   | ✅\n280  | 676902   | 676902   | ✅\n281  | 358344   | 358344   | ✅\n282  | 566054   | 577387   | ❌\n283  | 339822   | 339822   | ✅\n284  | 108299   | 208299   | ❌\n285  | 987831   | 987831   | ✅\n286  | 462491   | 462491   | ✅\n287  | 677212   | 677212   | ✅\n288  | 152890   | 152890   | ✅\n289  | 729559   | 728559   | ❌\n290  | 435365   | 435365   | ✅\n291  | 976382   | 976382   | ✅\n292  | 024154   | 024154   | ✅\n293  | 692901   | 692901   | ✅\n294  | 082066   | 082066   | ✅\n295  | 151733   | 152733   | ❌\n296  | 884319   | 884319   | ✅\n297  | 280017   | 280016   | ❌\n298  | 629915   | 629915   | ✅\n299  | 838193   | 838193   | ✅\n----------------------------------------\n🎯 Overall Accuracy: 71.67% (215/300)\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "legacy/orchestration/run_experiments.py",
+      "kind": "python",
+      "timeout_sec": 180,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 82.5,
+      "stdout_tail": "🚀 Starting keystroke inference experiments\n==================================================\n✅ All dependencies are available\n✅ All required data and model files are present\n\n🔄 Extracting features from raw signals\nCommand: /opt/anaconda3/bin/python /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/processing/keystroke_segmentation+feature_extraction.py\n✅ Extracting features from raw signals completed successfully\n\n🔄 Running PIN inference experiments\nCommand: /opt/anaconda3/bin/python /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/inference/infer_PINs.py\n✅ Running PIN inference experiments completed successfully\n📊 PIN Inference Results:\n   - Overall Accuracy: 71.67%\n\n🔄 Running Impact_of_Hand_Size.py\nCommand: /opt/anaconda3/bin/python /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/robustness/Impact_of_Hand_Size.py\n✅ Running Impact_of_Hand_Size.py completed successfully\n\n🔄 Running Impact_of_Battery_and_BackgroundApps.py\nCommand: /opt/anaconda3/bin/python /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/robustness/Impact_of_Battery_and_BackgroundApps.py\n✅ Running Impact_of_Battery_and_BackgroundApps.py completed successfully\n\n🔄 Running Different_Attempts_6digit.py\nCommand: /opt/anaconda3/bin/python /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/inference/Different_Attempts_6digit.py\n✅ Running Different_Attempts_6digit.py completed successfully\n\n🔄 Running Different_Attempts_4digit.py\nCommand: /opt/anaconda3/bin/python /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/inference/Different_Attempts_4digit.py\n✅ Running Different_Attempts_4digit.py completed successfully\n\n🔄 Running Different_Attempts_8digit.py\nCommand: /opt/anaconda3/bin/python /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/inference/Different_Attempts_8digit.py\n✅ Running Different_Attempts_8digit.py completed successfully\n\n🔄 Generating plots with Confusion_Matrix.py\nCommand: /opt/anaconda3/bin/python /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/visualization/Confusion_Matrix.py\n✅ Generating plots with Confusion_Matrix.py completed successfully\n\n==================================================\n🎉 All experiments completed successfully!\n\n📊 Results saved to: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/outputs/legacy/orchestration/experiment_results.json\n\n📈 Performance Summary:\n- Inference: [71.67]% accuracy\n\n📁 Check output files and plots in the current directory.\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "legacy/processing/Envelope demodulation.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 3.85,
+      "stdout_tail": "Reading data...\nStarting to detect significant peaks...\n",
+      "stderr_tail": "\nProcessing period:   0%|          | 0/217 [00:00<?, ?it/s]\nProcessing period: 100%|██████████| 217/217 [00:00<00:00, 123512.55it/s]\n/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/processing/Envelope demodulation.py:117: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown\n  plt.show()\n"
+    },
+    {
+      "path": "legacy/processing/Mechanism-aware spike segmentation.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 4.22,
+      "stdout_tail": "Reading data...\nStarting to detect significant peaks...\nvalley indices: [  4   9  12  16  20  24  28  32  37  41  45  49  53  63  67  72  87  91\n  95 109 114 118 123 136 141 163 168 173 187 191 196 199 203 206 209 213\n 217 221 223 226 230 235 241 245 249 253 257 261 264 269 271 274 278 282\n 287 292 295]\npeak indices: [  7  19  30  44  56  68  78  88 104 116 128 149 166 177 189 201 211 228\n 239 255 266 280 290]\n",
+      "stderr_tail": "\nProcessing period:   0%|          | 0/217 [00:00<?, ?it/s]\nProcessing period: 100%|██████████| 217/217 [00:00<00:00, 130023.42it/s]\n/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/processing/Mechanism-aware spike segmentation.py:180: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown\n  plt.show()\n"
+    },
+    {
+      "path": "legacy/processing/Spectral subtraction.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 3.42,
+      "stdout_tail": "(501, 222)\n(501, 222)\n",
+      "stderr_tail": "/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/processing/Spectral subtraction.py:145: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown\n  plt.show()\n/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/processing/Spectral subtraction.py:145: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown\n  plt.show()\n"
+    },
+    {
+      "path": "legacy/processing/keystroke_segmentation+feature_extraction.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 0.81,
+      "stdout_tail": "[SUCCESS] Saved to /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/derived/extracted_features_163589.csv\nColumns: 1 (PIN) + 6 (timestamps) + 30 (features) = 37\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "legacy/robustness/Impact_of_Battery_and_BackgroundApps.py",
+      "kind": "python",
+      "timeout_sec": 180,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 7.31,
+      "stdout_tail": "a/robustness/battery_background/data_70pct_busy_run03.csv → 60.00%\nEvaluated: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/robustness/battery_background/data_70pct_busy_run04.csv → 58.00%\nEvaluated: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/robustness/battery_background/data_70pct_busy_run05.csv → 72.00%\nEvaluated: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/robustness/battery_background/data_70pct_busy_run06.csv → 74.00%\nEvaluated: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/robustness/battery_background/data_70pct_busy_run07.csv → 72.00%\nEvaluated: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/robustness/battery_background/data_70pct_busy_run08.csv → 58.00%\nEvaluated: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/robustness/battery_background/data_70pct_busy_run09.csv → 64.00%\nEvaluated: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/robustness/battery_background/data_70pct_busy_run10.csv → 68.00%\nEvaluated: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/robustness/battery_background/data_70pct_busy_run11.csv → 68.00%\nEvaluated: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/robustness/battery_background/data_70pct_busy_run12.csv → 74.00%\nEvaluated: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/robustness/battery_background/data_70pct_busy_run13.csv → 72.00%\nEvaluated: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/robustness/battery_background/data_70pct_busy_run14.csv → 60.00%\nEvaluated: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/robustness/battery_background/data_70pct_idle_run00.csv → 70.00%\nEvaluated: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/robustness/battery_background/data_70pct_idle_run01.csv → 52.00%\nEvaluated: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/robustness/battery_background/data_70pct_idle_run02.csv → 66.00%\nEvaluated: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/robustness/battery_background/data_70pct_idle_run03.csv → 72.00%\nEvaluated: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/robustness/battery_background/data_70pct_idle_run04.csv → 58.00%\nEvaluated: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/robustness/battery_background/data_70pct_idle_run05.csv → 68.00%\nEvaluated: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/robustness/battery_background/data_70pct_idle_run06.csv → 68.00%\nEvaluated: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/robustness/battery_background/data_70pct_idle_run07.csv → 62.00%\nEvaluated: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/robustness/battery_background/data_70pct_idle_run08.csv → 60.00%\nEvaluated: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/robustness/battery_background/data_70pct_idle_run09.csv → 54.00%\nEvaluated: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/robustness/battery_background/data_70pct_idle_run10.csv → 66.00%\nEvaluated: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/robustness/battery_background/data_70pct_idle_run11.csv → 74.00%\nEvaluated: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/robustness/battery_background/data_70pct_idle_run12.csv → 64.00%\nEvaluated: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/robustness/battery_background/data_70pct_idle_run13.csv → 62.00%\nEvaluated: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/robustness/battery_background/data_70pct_idle_run14.csv → 54.00%\n\n✅ All evaluations completed, results saved to /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/outputs/legacy/robustness/boxplot_data.csv\n📊 Accuracy statistical results saved to /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/outputs/legacy/robustness/accuracy_stats.csv\n",
+      "stderr_tail": "/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/robustness/Impact_of_Battery_and_BackgroundApps.py:128: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.\n  stats_df = df.groupby(['Battery', 'Load'])['Accuracy'].agg(['mean', 'std']).unstack()\n"
+    },
+    {
+      "path": "legacy/robustness/Impact_of_Hand_Size.py",
+      "kind": "python",
+      "timeout_sec": 180,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 3.22,
+      "stdout_tail": "🚀 Starting batch evaluation of 6 robustness test files...\n\n✅  small + high_arch    → Acc: 64.00%, SE: 6.79%\n✅  small + low_profile  → Acc: 70.00%, SE: 6.48%\n✅ medium + high_arch    → Acc: 66.00%, SE: 6.70%\n✅ medium + low_profile  → Acc: 82.00%, SE: 5.43%\n✅  large + high_arch    → Acc: 52.00%, SE: 7.07%\n✅  large + low_profile  → Acc: 74.00%, SE: 6.20%\n\n============================================================\n📊 Joint model evaluation results (correct SE calculation)\nHand Size     Posture  JointAccMean  JointAccSE\n    large   high_arch         52.00        7.07\n    large low_profile         74.00        6.20\n   medium   high_arch         66.00        6.70\n   medium low_profile         82.00        5.43\n    small   high_arch         64.00        6.79\n    small low_profile         70.00        6.48\n============================================================\n\n💾 Results saved to '/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/outputs/legacy/robustness/robustness_joint_summary_correct_se.csv'\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "legacy/robustness/Perturbations_Clothing.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 3.87,
+      "stdout_tail": "✅ Signal loaded: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/raw_signals/ThickClothing_PIN_220746.csv\n   - Duration: 5.50 s\n   - Sample rate: 20000 Hz\n",
+      "stderr_tail": "/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/robustness/Perturbations_Clothing.py:90: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown\n  plt.show()\n"
+    },
+    {
+      "path": "legacy/robustness/Perturbations_Phonecase.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 4.64,
+      "stdout_tail": "❌ File not found: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/raw_signals/PhoneCase_PIN_163589.csv\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "legacy/robustness/Perturbations_Screen_Protector.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 4.91,
+      "stdout_tail": "✅ Signal loaded: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/raw_signals/ScreenProtector_PIN_841023.csv\n   - Duration: 5.50 s\n   - Sample rate: 20000 Hz\n",
+      "stderr_tail": "/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/robustness/Perturbations_Screen_Protector.py:81: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown\n  plt.show()\n"
+    },
+    {
+      "path": "legacy/robustness/Perturbations_Sitting_Posture.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 3.84,
+      "stdout_tail": "✅ Signal loaded: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/raw_signals/SittingPosture_PIN_140730.csv\n   - Duration: 5.50 s\n   - Sample rate: 20000 Hz\n",
+      "stderr_tail": "/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/robustness/Perturbations_Sitting_Posture.py:89: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown\n  plt.show()\n"
+    },
+    {
+      "path": "legacy/training/MLP_training.py",
+      "kind": "python",
+      "timeout_sec": 180,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 164.44,
+      "stdout_tail": "Loading data...\nDevice use: cpu\nStarting training efficiency experiment...\nTesting training data sample size N=5...\nN=5: Mean Top-3 Acc = 62.32%, Std = 5.91\nTesting training data sample size N=10...\nN=10: Mean Top-3 Acc = 76.70%, Std = 3.05\nTesting training data sample size N=20...\nN=20: Mean Top-3 Acc = 77.85%, Std = 2.63\nTesting training data sample size N=30...\nN=30: Mean Top-3 Acc = 80.64%, Std = 1.68\nTesting training data sample size N=40...\nN=40: Mean Top-3 Acc = 80.61%, Std = 2.17\nTesting training data sample size N=50...\nN=50: Mean Top-3 Acc = 86.80%, Std = 2.95\nTesting training data sample size N=60...\nN=60: Mean Top-3 Acc = 91.15%, Std = 2.27\nTesting training data sample size N=70...\nN=70: Mean Top-3 Acc = 94.45%, Std = 0.55\nTesting training data sample size N=100...\nN=100: Mean Top-3 Acc = 96.79%, Std = 0.40\nTesting training data sample size N=200...\nN=200: Mean Top-3 Acc = 97.60%, Std = 0.22\nTesting training data sample size N=400...\nN=400: Mean Top-3 Acc = 97.99%, Std = 0.21\nTesting training data sample size N=800...\nN=800: Mean Top-3 Acc = 98.22%, Std = 0.08\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "legacy/training/fit_kinematic_model.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 2.43,
+      "stdout_tail": "📂 Loaded 800 training samples, each with 37 columns\n✅ Collected 4000 valid (u→v, Δt) samples in total\n\n📊 Fitting results:\nk |   μ (mean)   |  σ (std)   | sample count\n--|--------------|------------|--------\n0 |   0.057804   |  0.011311  | 382\n1 |   0.179818   |  0.020056  | 1032\n2 |   0.219855   |  0.019693  | 798\n3 |   0.259687   |  0.019467  | 550\n4 |   0.299814   |  0.020624  | 842\n5 |   0.340209   |  0.021772  | 160\n6 |   0.381643   |  0.022932  | 78\n7 |   0.421574   |  0.018867  | 158\n\n💾 Saved temporal model parameters to: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/checkpoints/models/kinematic_params.pth\n",
+      "stderr_tail": "/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/training/fit_kinematic_model.py:52: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`\n  pin_str = str(int(row[0])).zfill(6)\n/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/training/fit_kinematic_model.py:62: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`\n  ts = [float(row[i]) for i in range(1, 7)]\n"
+    },
+    {
+      "path": "legacy/training/mlp_training_sample_impact.py",
+      "kind": "python",
+      "timeout_sec": 180,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 175.66,
+      "stdout_tail": "Loading data...\nUsing device: cpu\nStarting training efficiency experiment...\nTesting training sample size N=5...\nN=5: Mean Top-3 Acc = 67.97%, Std = 4.77\nTesting training sample size N=10...\nN=10: Mean Top-3 Acc = 75.59%, Std = 1.03\nTesting training sample size N=20...\nN=20: Mean Top-3 Acc = 76.95%, Std = 2.61\nTesting training sample size N=30...\nN=30: Mean Top-3 Acc = 80.11%, Std = 2.54\nTesting training sample size N=40...\nN=40: Mean Top-3 Acc = 82.39%, Std = 1.97\nTesting training sample size N=50...\nN=50: Mean Top-3 Acc = 86.75%, Std = 3.50\nTesting training sample size N=60...\nN=60: Mean Top-3 Acc = 89.45%, Std = 4.29\nTesting training sample size N=70...\nN=70: Mean Top-3 Acc = 93.23%, Std = 1.38\nTesting training sample size N=100...\nN=100: Mean Top-3 Acc = 95.69%, Std = 0.41\nTesting training sample size N=200...\nN=200: Mean Top-3 Acc = 97.87%, Std = 0.24\nTesting training sample size N=400...\nN=400: Mean Top-3 Acc = 98.10%, Std = 0.02\nTesting training sample size N=800...\nN=800: Mean Top-3 Acc = 98.29%, Std = 0.07\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "legacy/training/overhead_calculation.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 2.31,
+      "stdout_tail": "🚀 Initializing benchmark testing...\n\n⏱️  Measuring latency...\n✅ Average 6-digit PIN inference latency: 0.4602 ms\n\n💾 Measuring memory usage...\n✅ Peak Memory Allocation: 0.0081 MB\n✅ Total Process Memory (RSS): 180.98 MB\n\n========================================\nLatency (End-to-End): < 1 ms\nMemory Overhead:      ~181 MB\n========================================\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "legacy/training/sensitivity_analysis_variance.py",
+      "kind": "python",
+      "timeout_sec": 180,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 7.52,
+      "stdout_tail": "📊 Successfully loaded 300 test samples\n\n🔄 Starting Fitts' Law parameter sensitivity analysis...\n\n   Testing σ scaling factor: 0.2x\n   → Accuracy: 49.67%\n\n   Testing σ scaling factor: 0.5x\n   → Accuracy: 57.33%\n\n   Testing σ scaling factor: 0.8x\n   → Accuracy: 66.33%\n\n   Testing σ scaling factor: 1.0x\n   → Accuracy: 70.33%\n\n   Testing σ scaling factor: 1.5x\n   → Accuracy: 67.67%\n\n   Testing σ scaling factor: 2.0x\n   → Accuracy: 64.33%\n\n   Testing σ scaling factor: 3.0x\n   → Accuracy: 55.00%\n\n=============================================\nσ Scaling Factor | Accuracy\n---------------------------------------------\n      0.2x |   49.67%\n      0.5x |   57.33%\n      0.8x |   66.33%\n      1.0x |   70.33% ← Main experiment config\n      1.5x |   67.67%\n      2.0x |   64.33%\n      3.0x |   55.00%\n=============================================\n",
+      "stderr_tail": "/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/training/sensitivity_analysis_variance.py:222: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown\n  plt.show()\n"
+    },
+    {
+      "path": "legacy/visualization/Confusion_Matrix.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 2.55,
+      "stdout_tail": "Average accuracy: 0.7307\n",
+      "stderr_tail": "/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/visualization/Confusion_Matrix.py:82: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown\n  plt.show()\n"
+    },
+    {
+      "path": "legacy/visualization/Test_MLP_Top1.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 3.78,
+      "stdout_tail": "📂 Loading test data from '/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/classification/test_data.csv'...\n🧪 Running inference on test set...\n\n============================================================\n✅ Final Test Accuracy: 0.7307 (73.07%)\n\nDigit | Actual Recall\n-------------------------\n  0   |     62.00%\n  1   |     82.00%\n  2   |     71.33%\n  3   |     84.00%\n  4   |     76.67%\n  5   |     55.67%\n  6   |     75.67%\n  7   |     83.67%\n  8   |     62.33%\n  9   |     77.33%\n============================================================\n\n📌 Confusion Matrix (rows: true, cols: predicted):\n[[186   0   0   0   0   1   0   0  59  54]\n [  0 246  23   3   0   0  26   2   0   0]\n [  0   5 214   5   0   1   0   0  59  16]\n [  0   1  39 252   0   0   0   0   6   2]\n [  0   0   3   0 230   0   7  60   0   0]\n [  9   6  37   1   2 167   0   0  78   0]\n [  0  12   0   0   5   0 227  56   0   0]\n [  0   0   0   0  23   0  26 251   0   0]\n [ 26   0  24   1   0  11   0   0 187  51]\n [ 12   0   4   0   0   0   0   0  52 232]]\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "legacy/visualization/Test_MLP_Top3.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 3.24,
+      "stdout_tail": "📂 Loading test data from '/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/classification/test_data.csv'...\n🧪 Running inference on test set...\n\n============================================================\n✅ Top-1 Accuracy: 0.7307 (73.07%)\n✅ Top-3 Accuracy: 0.9817 (98.17%)\n\nDigit | Recall (Top-1)\n-------------------------\n  0   |     62.00%\n  1   |     82.00%\n  2   |     71.33%\n  3   |     84.00%\n  4   |     76.67%\n  5   |     55.67%\n  6   |     75.67%\n  7   |     83.67%\n  8   |     62.33%\n  9   |     77.33%\n============================================================\n\n📌 Confusion Matrix (rows: true, cols: predicted):\n[[186   0   0   0   0   1   0   0  59  54]\n [  0 246  23   3   0   0  26   2   0   0]\n [  0   5 214   5   0   1   0   0  59  16]\n [  0   1  39 252   0   0   0   0   6   2]\n [  0   0   3   0 230   0   7  60   0   0]\n [  9   6  37   1   2 167   0   0  78   0]\n [  0  12   0   0   5   0 227  56   0   0]\n [  0   0   0   0  23   0  26 251   0   0]\n [ 26   0  24   1   0  11   0   0 187  51]\n [ 12   0   4   0   0   0   0   0  52 232]]\n",
+      "stderr_tail": ""
+    }
+  ]
+}

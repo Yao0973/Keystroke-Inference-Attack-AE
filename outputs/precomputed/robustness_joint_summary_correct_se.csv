@@ -1,0 +1,7 @@
+Hand Size,Posture,JointAccMean,JointAccSE
+large,high_arch,52.0,7.0654086930622775
+large,low_profile,74.0,6.203224967708329
+medium,high_arch,66.0,6.69925368977769
+medium,low_profile,82.0,5.43323108288245
+small,high_arch,64.0,6.788225099390856
+small,low_profile,70.0,6.48074069840786

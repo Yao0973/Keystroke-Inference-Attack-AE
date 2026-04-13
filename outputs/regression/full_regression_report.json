@@ -1,0 +1,358 @@
+{
+  "total": 35,
+  "passed": 14,
+  "failed": 21,
+  "timeout": 0,
+  "results": [
+    {
+      "path": "scripts/quick_test.sh",
+      "kind": "script",
+      "timeout_sec": 180,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 8.52,
+      "stdout_tail": "[artifact] Running quick test...\n[artifact-ok] Completed 'quick-test'. Outputs saved under /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/outputs/quick_test\n[artifact] Quick test finished successfully.\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "scripts/reproduce_table1.sh",
+      "kind": "script",
+      "timeout_sec": 180,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 3.33,
+      "stdout_tail": "[artifact] Reproducing Table 1 placeholder results...\n[artifact-ok] Completed 'table1'. Outputs saved under /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/outputs/table1\n  dataset: test_data.csv\n  num_samples: 3000\n  top1_accuracy_pct: 73.0667\n  top3_accuracy_pct: 98.1667\n  confusion_matrix: [[186, 0, 0, 0, 0, 1, 0, 0, 59, 54], [0, 246, 23, 3, 0, 0, 26, 2, 0, 0], [0, 5, 214, 5, 0, 1, 0, 0, 59, 16], [0, 1, 39, 252, 0, 0, 0, 0, 6, 2], [0, 0, 3, 0, 230, 0, 7, 60, 0, 0], [9, 6, 37, 1, 2, 167, 0, 0, 78, 0], [0, 12, 0, 0, 5, 0, 227, 56, 0, 0], [0, 0, 0, 0, 23, 0, 26, 251, 0, 0], [26, 0, 24, 1, 0, 11, 0, 0, 187, 51], [12, 0, 4, 0, 0, 0, 0, 0, 52, 232]]\n[artifact] Table 1 reproduction finished successfully.\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "scripts/reproduce_table2.sh",
+      "kind": "script",
+      "timeout_sec": 180,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 8.31,
+      "stdout_tail": "[artifact] Reproducing Table 2 placeholder results...\n[artifact-ok] Completed 'table2'. Outputs saved under /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/outputs/table2\n  rows: [{'pin_length': 4, 'dataset': 'full_test_data_4digit.csv', 'num_samples': 300, 'mlp_accuracy_pct': 27.0, 'joint_accuracy_pct': 74.3333, 'top_k': 3, 'lambda': 1.5}, {'pin_length': 6, 'dataset': 'full_test_data_6digit.csv', 'num_samples': 300, 'mlp_accuracy_pct': 20.3333, 'joint_accuracy_pct': 70.3333, 'top_k': 3, 'lambda': 1.5}, {'pin_length': 8, 'dataset': 'full_test_data_8digit.csv', 'num_samples': 300, 'mlp_accuracy_pct': 8.6667, 'joint_accuracy_pct': 61.6667, 'top_k': 3, 'lambda': 1.5}, {'pin_length': 11, 'dataset': 'full_test_data_11digit.csv', 'num_samples': 300, 'mlp_accuracy_pct': 6.6667, 'joint_accuracy_pct': 55.0, 'top_k': 3, 'lambda': 1.5}, {'pin_length': 16, 'dataset': 'full_test_data_16digit.csv', 'num_samples': 300, 'mlp_accuracy_pct': 0.3333, 'joint_accuracy_pct': 41.0, 'top_k': 3, 'lambda': 1.5}]\n[artifact] Table 2 reproduction finished successfully.\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "scripts/reproduce_figure1.sh",
+      "kind": "script",
+      "timeout_sec": 180,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 5.04,
+      "stdout_tail": "[artifact] Reproducing Figure 1 placeholder...\n[artifact-ok] Completed 'figure1'. Outputs saved under /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/outputs/figure1\n  source_dataset: test_data.csv\n  top1_accuracy_pct: 73.0667\n[artifact] Figure 1 reproduction finished successfully.\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "scripts/reproduce_ablation.sh",
+      "kind": "script",
+      "timeout_sec": 180,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 5.54,
+      "stdout_tail": "[artifact] Reproducing ablation results...\n[artifact-ok] Completed 'ablation'. Outputs saved under /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/outputs/ablation\n  rows: [{'setting': 'mlp_only', 'use_kinematic': False, 'top_k': 3, 'mlp_accuracy_pct': 20.3333, 'joint_accuracy_pct': 20.3333}, {'setting': 'joint_top3', 'use_kinematic': True, 'top_k': 3, 'mlp_accuracy_pct': 20.3333, 'joint_accuracy_pct': 70.3333}, {'setting': 'joint_top10', 'use_kinematic': True, 'top_k': 10, 'mlp_accuracy_pct': 20.3333, 'joint_accuracy_pct': 71.6667}]\n[artifact] Ablation reproduction finished successfully.\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "scripts/reproduce_robustness.sh",
+      "kind": "script",
+      "timeout_sec": 240,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 27.53,
+      "stdout_tail": "0, 'mlp_accuracy_pct': 22.0}, {'hand_size': 'large', 'posture': 'high_arch', 'joint_accuracy_pct': 52.0, 'mlp_accuracy_pct': 14.0}, {'hand_size': 'large', 'posture': 'low_profile', 'joint_accuracy_pct': 74.0, 'mlp_accuracy_pct': 18.0}]\n  battery_background_summary_rows: [{'battery': '100pct', 'load': 'busy', 'joint_accuracy_mean_pct': 65.06666666666666, 'joint_accuracy_std_pct': 4.949266419908924, 'mlp_accuracy_mean_pct': 16.266666666666666, 'mlp_accuracy_std_pct': 4.0614330100640705}, {'battery': '100pct', 'load': 'idle', 'joint_accuracy_mean_pct': 66.8, 'joint_accuracy_std_pct': 6.493953231385993, 'mlp_accuracy_mean_pct': 17.6, 'mlp_accuracy_std_pct': 4.610546915187272}, {'battery': '30pct', 'load': 'busy', 'joint_accuracy_mean_pct': 62.8, 'joint_accuracy_std_pct': 5.747048932153915, 'mlp_accuracy_mean_pct': 17.066666666666666, 'mlp_accuracy_std_pct': 5.750362307426087}, {'battery': '30pct', 'load': 'idle', 'joint_accuracy_mean_pct': 66.0, 'joint_accuracy_std_pct': 8.141603913585723, 'mlp_accuracy_mean_pct': 14.666666666666666, 'mlp_accuracy_std_pct': 6.531972647421808}, {'battery': '3pct', 'load': 'busy', 'joint_accuracy_mean_pct': 68.93333333333334, 'joint_accuracy_std_pct': 6.0882400303098, 'mlp_accuracy_mean_pct': 17.333333333333332, 'mlp_accuracy_std_pct': 4.760952285695233}, {'battery': '3pct', 'load': 'idle', 'joint_accuracy_mean_pct': 64.4, 'joint_accuracy_std_pct': 4.792851820307882, 'mlp_accuracy_mean_pct': 15.866666666666667, 'mlp_accuracy_std_pct': 4.307247491424303}, {'battery': '70pct', 'load': 'busy', 'joint_accuracy_mean_pct': 66.93333333333334, 'joint_accuracy_std_pct': 5.993647430722757, 'mlp_accuracy_mean_pct': 17.333333333333332, 'mlp_accuracy_std_pct': 4.820590756130958}, {'battery': '70pct', 'load': 'idle', 'joint_accuracy_mean_pct': 63.333333333333336, 'joint_accuracy_std_pct': 6.747133430117527, 'mlp_accuracy_mean_pct': 18.533333333333335, 'mlp_accuracy_std_pct': 5.730453318725774}]\n[artifact] Robustness reproduction finished successfully.\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "scripts/reproduce_main_results.sh",
+      "kind": "script",
+      "timeout_sec": 300,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 30.63,
+      "stdout_tail": "[artifact] Reproducing main results...\n[artifact-ok] Completed 'main-results'. Outputs saved under /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/outputs/main_results\n[artifact] Main-result reproduction finished successfully.\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "legacy/inference/Different_Attempts_4digit.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "failed",
+      "returncode": 1,
+      "runtime_sec": 1.75,
+      "stdout_tail": "",
+      "stderr_tail": "Traceback (most recent call last):\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/inference/Different_Attempts_4digit.py\", line 164, in <module>\n    main()\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/inference/Different_Attempts_4digit.py\", line 63, in main\n    raise FileNotFoundError(f\"❌ Missing file: {f}\")\nFileNotFoundError: ❌ Missing file: keystroke_morphology_mlp.pth\n"
+    },
+    {
+      "path": "legacy/inference/Different_Attempts_6digit.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "failed",
+      "returncode": 1,
+      "runtime_sec": 1.32,
+      "stdout_tail": "",
+      "stderr_tail": "Traceback (most recent call last):\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/inference/Different_Attempts_6digit.py\", line 178, in <module>\n    main()\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/inference/Different_Attempts_6digit.py\", line 81, in main\n    raise FileNotFoundError(f\"❌ Required file missing: {f}\")\nFileNotFoundError: ❌ Required file missing: keystroke_morphology_mlp.pth\n"
+    },
+    {
+      "path": "legacy/inference/Different_Attempts_8digit.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "failed",
+      "returncode": 1,
+      "runtime_sec": 1.3,
+      "stdout_tail": "",
+      "stderr_tail": "Traceback (most recent call last):\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/inference/Different_Attempts_8digit.py\", line 201, in <module>\n    main()\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/inference/Different_Attempts_8digit.py\", line 89, in main\n    raise FileNotFoundError(f\"❌ Missing file: {f}\")\nFileNotFoundError: ❌ Missing file: keystroke_morphology_mlp.pth\n"
+    },
+    {
+      "path": "legacy/inference/Inference_11digit.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "failed",
+      "returncode": 1,
+      "runtime_sec": 1.47,
+      "stdout_tail": "",
+      "stderr_tail": "Traceback (most recent call last):\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/inference/Inference_11digit.py\", line 213, in <module>\n    main()\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/inference/Inference_11digit.py\", line 88, in main\n    raise FileNotFoundError(f\"❌ missing file: {f}\")\nFileNotFoundError: ❌ missing file: keystroke_morphology_mlp.pth\n"
+    },
+    {
+      "path": "legacy/inference/Inference_16digit.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "failed",
+      "returncode": 1,
+      "runtime_sec": 1.39,
+      "stdout_tail": "",
+      "stderr_tail": "Traceback (most recent call last):\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/inference/Inference_16digit.py\", line 213, in <module>\n    main()\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/inference/Inference_16digit.py\", line 88, in main\n    raise FileNotFoundError(f\"❌ missing file: {f}\")\nFileNotFoundError: ❌ missing file: keystroke_morphology_mlp.pth\n"
+    },
+    {
+      "path": "legacy/inference/Inference_4digit.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "failed",
+      "returncode": 1,
+      "runtime_sec": 1.35,
+      "stdout_tail": "",
+      "stderr_tail": "Traceback (most recent call last):\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/inference/Inference_4digit.py\", line 204, in <module>\n    main()\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/inference/Inference_4digit.py\", line 79, in main\n    raise FileNotFoundError(f\"❌ missing file: {f}\")\nFileNotFoundError: ❌ missing file: keystroke_morphology_mlp.pth\n"
+    },
+    {
+      "path": "legacy/inference/Inference_6digit.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "failed",
+      "returncode": 1,
+      "runtime_sec": 1.38,
+      "stdout_tail": "",
+      "stderr_tail": "Traceback (most recent call last):\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/inference/Inference_6digit.py\", line 207, in <module>\n    main()\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/inference/Inference_6digit.py\", line 80, in main\n    raise FileNotFoundError(f\"❌ Required file missing: {f}\")\nFileNotFoundError: ❌ Required file missing: keystroke_morphology_mlp.pth\n"
+    },
+    {
+      "path": "legacy/inference/Inference_8digit.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "failed",
+      "returncode": 1,
+      "runtime_sec": 1.39,
+      "stdout_tail": "",
+      "stderr_tail": "Traceback (most recent call last):\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/inference/Inference_8digit.py\", line 213, in <module>\n    main()\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/inference/Inference_8digit.py\", line 88, in main\n    raise FileNotFoundError(f\"❌ missing file: {f}\")\nFileNotFoundError: ❌ missing file: keystroke_morphology_mlp.pth\n"
+    },
+    {
+      "path": "legacy/inference/infer_PINs.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "failed",
+      "returncode": 1,
+      "runtime_sec": 1.14,
+      "stdout_tail": "",
+      "stderr_tail": "Traceback (most recent call last):\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/inference/infer_PINs.py\", line 178, in <module>\n    main()\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/inference/infer_PINs.py\", line 71, in main\n    raise FileNotFoundError(f\"缺少模型文件: {f}\")\nFileNotFoundError: 缺少模型文件: keystroke_morphology_mlp.pth\n"
+    },
+    {
+      "path": "legacy/orchestration/run_experiments.py",
+      "kind": "python",
+      "timeout_sec": 180,
+      "status": "failed",
+      "returncode": 1,
+      "runtime_sec": 3.8,
+      "stdout_tail": "🚀 Starting keystroke inference experiments\n==================================================\n✅ All dependencies are available\n⚠️  Missing data/model files: keystroke_morphology_mlp.pth, norm_params.pth, kinematic_params.pth, 6digit_PINs.csv\nSome experiments may not run. Please ensure all files are present.\n⚠️  Continuing with available files...\n⚠️  PIN_163589.csv not found, skipping feature extraction\n\n🔄 Running PIN inference experiments\nCommand: /Library/Frameworks/Python.framework/Versions/3.7/bin/python3 infer_PINs.py\n❌ Running PIN inference experiments failed with error code 2\nError output: /Library/Frameworks/Python.framework/Versions/3.7/Resources/Python.app/Contents/MacOS/Python: can't open file 'infer_PINs.py': [Errno 2] No such file or directory\n\n⚠️  Impact_of_Hand_Size.py not found, skipping\n⚠️  Impact_of_Battery_and_BackgroundApps.py not found, skipping\n⚠️  Different_Attempts_6digit.py not found, skipping\n⚠️  Different_Attempts_4digit.py not found, skipping\n⚠️  Different_Attempts_8digit.py not found, skipping\n⚠️  Confusion_Matrix.py not found, skipping\n\n==================================================\n❌ Some experiments failed. Check the output above for details.\n📊 Partial results saved to: experiment_results.json\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "legacy/processing/Envelope demodulation.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "failed",
+      "returncode": 1,
+      "runtime_sec": 1.29,
+      "stdout_tail": "Reading data...\n",
+      "stderr_tail": "Traceback (most recent call last):\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/processing/Envelope demodulation.py\", line 65, in <module>\n    x_data,y_data=process_and_plot_AMPD(file_name)\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/processing/Envelope demodulation.py\", line 15, in process_and_plot_AMPD\n    df = pd.read_csv(input_csv)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n    return func(*args, **kwargs)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 586, in read_csv\n    return _read(filepath_or_buffer, kwds)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 482, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 811, in __init__\n    self._engine = self._make_engine(self.engine)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 1040, in _make_engine\n    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py\", line 51, in __init__\n    self._open_handles(src, kwds)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/base_parser.py\", line 229, in _open_handles\n    errors=kwds.get(\"encoding_errors\", \"strict\"),\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/common.py\", line 707, in get_handle\n    newline=\"\",\nFileNotFoundError: [Errno 2] No such file or directory: 'keystroke.csv'\n"
+    },
+    {
+      "path": "legacy/processing/Mechanism-aware spike segmentation.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "failed",
+      "returncode": 1,
+      "runtime_sec": 2.17,
+      "stdout_tail": "Reading data...\n",
+      "stderr_tail": "aceback (most recent call last):\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/processing/Mechanism-aware spike segmentation.py\", line 100, in <module>\n    x_data, y_data = process_and_plot_AMPD(file_name)\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/processing/Mechanism-aware spike segmentation.py\", line 15, in process_and_plot_AMPD\n    df = pd.read_csv(input_csv)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n    return func(*args, **kwargs)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 586, in read_csv\n    return _read(filepath_or_buffer, kwds)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 482, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 811, in __init__\n    self._engine = self._make_engine(self.engine)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 1040, in _make_engine\n    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py\", line 51, in __init__\n    self._open_handles(src, kwds)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/base_parser.py\", line 229, in _open_handles\n    errors=kwds.get(\"encoding_errors\", \"strict\"),\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/common.py\", line 707, in get_handle\n    newline=\"\",\nFileNotFoundError: [Errno 2] No such file or directory: 'keystroke_sequence_170246_output.csv'\n"
+    },
+    {
+      "path": "legacy/processing/Spectral subtraction.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "failed",
+      "returncode": 1,
+      "runtime_sec": 1.7,
+      "stdout_tail": "",
+      "stderr_tail": " \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/processing/Spectral subtraction.py\", line 191, in <module>\n    original_audio, cleaned_audio = process_audio_with_spectral_subtraction(input_csv, output_csv, noise_csv_files)\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/processing/Spectral subtraction.py\", line 18, in process_audio_with_spectral_subtraction\n    df = pd.read_csv(input_csv)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n    return func(*args, **kwargs)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 586, in read_csv\n    return _read(filepath_or_buffer, kwds)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 482, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 811, in __init__\n    self._engine = self._make_engine(self.engine)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 1040, in _make_engine\n    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py\", line 51, in __init__\n    self._open_handles(src, kwds)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/base_parser.py\", line 229, in _open_handles\n    errors=kwds.get(\"encoding_errors\", \"strict\"),\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/common.py\", line 707, in get_handle\n    newline=\"\",\nFileNotFoundError: [Errno 2] No such file or directory: '1234567890_original.CSV'\n"
+    },
+    {
+      "path": "legacy/processing/keystroke_segmentation+feature_extraction.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 0.87,
+      "stdout_tail": "[SUCCESS] Saved to /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/data/derived/extracted_features_163589.csv\nColumns: 1 (PIN) + 6 (timestamps) + 30 (features) = 37\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "legacy/robustness/Impact_of_Battery_and_BackgroundApps.py",
+      "kind": "python",
+      "timeout_sec": 180,
+      "status": "failed",
+      "returncode": 1,
+      "runtime_sec": 1.51,
+      "stdout_tail": "",
+      "stderr_tail": "Traceback (most recent call last):\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/robustness/Impact_of_Battery_and_BackgroundApps.py\", line 132, in <module>\n    main()\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/robustness/Impact_of_Battery_and_BackgroundApps.py\", line 92, in main\n    model.load_state_dict(torch.load('keystroke_morphology_mlp.pth', map_location='cpu', weights_only=False))\n  File \"/Users/an/Library/Python/3.7/lib/python/site-packages/torch/serialization.py\", line 771, in load\n    with _open_file_like(f, 'rb') as opened_file:\n  File \"/Users/an/Library/Python/3.7/lib/python/site-packages/torch/serialization.py\", line 270, in _open_file_like\n    return _open_file(name_or_buffer, mode)\n  File \"/Users/an/Library/Python/3.7/lib/python/site-packages/torch/serialization.py\", line 251, in __init__\n    super(_open_file, self).__init__(open(name, mode))\nFileNotFoundError: [Errno 2] No such file or directory: 'keystroke_morphology_mlp.pth'\n"
+    },
+    {
+      "path": "legacy/robustness/Impact_of_Hand_Size.py",
+      "kind": "python",
+      "timeout_sec": 180,
+      "status": "failed",
+      "returncode": 1,
+      "runtime_sec": 1.37,
+      "stdout_tail": "",
+      "stderr_tail": "Traceback (most recent call last):\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/robustness/Impact_of_Hand_Size.py\", line 221, in <module>\n    main()\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/robustness/Impact_of_Hand_Size.py\", line 157, in main\n    raise FileNotFoundError(f\"❌ Required file missing: {f}\")\nFileNotFoundError: ❌ Required file missing: keystroke_morphology_mlp.pth\n"
+    },
+    {
+      "path": "legacy/robustness/Perturbations_Clothing.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 1.62,
+      "stdout_tail": "❌ File not found: ThickClothing_PIN_220746.csv\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "legacy/robustness/Perturbations_Phonecase.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 1.99,
+      "stdout_tail": "❌ File not found: PhoneCase_PIN_163589.csv\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "legacy/robustness/Perturbations_Screen_Protector.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 1.92,
+      "stdout_tail": "❌ File not found: ScreenProtector_PIN_841023.csv\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "legacy/robustness/Perturbations_Sitting_Posture.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 1.65,
+      "stdout_tail": "❌ File not found: SittingPosture_PIN_140730.csv\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "legacy/training/MLP_training.py",
+      "kind": "python",
+      "timeout_sec": 180,
+      "status": "failed",
+      "returncode": 1,
+      "runtime_sec": 3.35,
+      "stdout_tail": "Loading data...\n",
+      "stderr_tail": "Traceback (most recent call last):\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/training/MLP_training.py\", line 153, in <module>\n    run_experiment()\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/training/MLP_training.py\", line 86, in run_experiment\n    train_df = pd.read_csv('train_data.csv')\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n    return func(*args, **kwargs)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 586, in read_csv\n    return _read(filepath_or_buffer, kwds)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 482, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 811, in __init__\n    self._engine = self._make_engine(self.engine)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 1040, in _make_engine\n    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py\", line 51, in __init__\n    self._open_handles(src, kwds)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/base_parser.py\", line 229, in _open_handles\n    errors=kwds.get(\"encoding_errors\", \"strict\"),\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/common.py\", line 707, in get_handle\n    newline=\"\",\nFileNotFoundError: [Errno 2] No such file or directory: 'train_data.csv'\n"
+    },
+    {
+      "path": "legacy/training/fit_kinematic_model.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 1.96,
+      "stdout_tail": "📂 Loaded 800 training samples, each with 37 columns\n✅ Collected 4000 valid (u→v, Δt) samples in total\n\n📊 Fitting results:\nk |   μ (mean)   |  σ (std)   | sample count\n--|--------------|------------|--------\n0 |   0.057804   |  0.011311  | 382\n1 |   0.179818   |  0.020056  | 1032\n2 |   0.219855   |  0.019693  | 798\n3 |   0.259687   |  0.019467  | 550\n4 |   0.299814   |  0.020624  | 842\n5 |   0.340209   |  0.021772  | 160\n6 |   0.381643   |  0.022932  | 78\n7 |   0.421574   |  0.018867  | 158\n\n💾 Saved temporal model parameters to: /Users/an/Downloads/Keystroke-Inference-Attack-Code-master/checkpoints/models/kinematic_params.pth\n",
+      "stderr_tail": ""
+    },
+    {
+      "path": "legacy/training/mlp_training_sample_impact.py",
+      "kind": "python",
+      "timeout_sec": 180,
+      "status": "failed",
+      "returncode": 1,
+      "runtime_sec": 4.18,
+      "stdout_tail": "Loading data...\n",
+      "stderr_tail": "Traceback (most recent call last):\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/training/mlp_training_sample_impact.py\", line 154, in <module>\n    run_experiment()\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/training/mlp_training_sample_impact.py\", line 86, in run_experiment\n    train_df = pd.read_csv('train_data.csv')\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n    return func(*args, **kwargs)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 586, in read_csv\n    return _read(filepath_or_buffer, kwds)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 482, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 811, in __init__\n    self._engine = self._make_engine(self.engine)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 1040, in _make_engine\n    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py\", line 51, in __init__\n    self._open_handles(src, kwds)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/base_parser.py\", line 229, in _open_handles\n    errors=kwds.get(\"encoding_errors\", \"strict\"),\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/common.py\", line 707, in get_handle\n    newline=\"\",\nFileNotFoundError: [Errno 2] No such file or directory: 'train_data.csv'\n"
+    },
+    {
+      "path": "legacy/training/overhead_calculation.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "failed",
+      "returncode": 1,
+      "runtime_sec": 1.19,
+      "stdout_tail": "",
+      "stderr_tail": "Traceback (most recent call last):\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/training/overhead_calculation.py\", line 7, in <module>\n    import psutil\nModuleNotFoundError: No module named 'psutil'\n"
+    },
+    {
+      "path": "legacy/training/sensitivity_analysis_variance.py",
+      "kind": "python",
+      "timeout_sec": 180,
+      "status": "failed",
+      "returncode": 1,
+      "runtime_sec": 2.72,
+      "stdout_tail": "",
+      "stderr_tail": "Traceback (most recent call last):\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/training/sensitivity_analysis_variance.py\", line 236, in <module>\n    main()\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/training/sensitivity_analysis_variance.py\", line 193, in main\n    model, norm_params, kinematic_params_orig, df = load_model_and_data()\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/training/sensitivity_analysis_variance.py\", line 81, in load_model_and_data\n    raise FileNotFoundError(f\"❌ Required file missing: {f}\")\nFileNotFoundError: ❌ Required file missing: keystroke_morphology_mlp.pth\n"
+    },
+    {
+      "path": "legacy/visualization/Confusion_Matrix.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "passed",
+      "returncode": 0,
+      "runtime_sec": 3.53,
+      "stdout_tail": "Average accuracy: 0.7307\n",
+      "stderr_tail": "/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/visualization/Confusion_Matrix.py:82: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.\n  plt.show()\n"
+    },
+    {
+      "path": "legacy/visualization/Test_MLP_Top1.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "failed",
+      "returncode": 1,
+      "runtime_sec": 2.93,
+      "stdout_tail": "📂 Loading test data from 'test_data.csv'...\n",
+      "stderr_tail": "Traceback (most recent call last):\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/visualization/Test_MLP_Top1.py\", line 58, in <module>\n    X_test, y_test = load_test_data()\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/visualization/Test_MLP_Top1.py\", line 47, in load_test_data\n    df = pd.read_csv(csv_path)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n    return func(*args, **kwargs)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 586, in read_csv\n    return _read(filepath_or_buffer, kwds)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 482, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 811, in __init__\n    self._engine = self._make_engine(self.engine)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 1040, in _make_engine\n    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py\", line 51, in __init__\n    self._open_handles(src, kwds)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/base_parser.py\", line 229, in _open_handles\n    errors=kwds.get(\"encoding_errors\", \"strict\"),\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/common.py\", line 707, in get_handle\n    newline=\"\",\nFileNotFoundError: [Errno 2] No such file or directory: 'test_data.csv'\n"
+    },
+    {
+      "path": "legacy/visualization/Test_MLP_Top3.py",
+      "kind": "python",
+      "timeout_sec": 120,
+      "status": "failed",
+      "returncode": 1,
+      "runtime_sec": 2.76,
+      "stdout_tail": "📂 Loading test data from 'test_data.csv'...\n",
+      "stderr_tail": "Traceback (most recent call last):\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/visualization/Test_MLP_Top3.py\", line 59, in <module>\n    X_test, y_test = load_test_data()\n  File \"/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/legacy/visualization/Test_MLP_Top3.py\", line 48, in load_test_data\n    df = pd.read_csv(csv_path)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n    return func(*args, **kwargs)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 586, in read_csv\n    return _read(filepath_or_buffer, kwds)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 482, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 811, in __init__\n    self._engine = self._make_engine(self.engine)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/readers.py\", line 1040, in _make_engine\n    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py\", line 51, in __init__\n    self._open_handles(src, kwds)\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/parsers/base_parser.py\", line 229, in _open_handles\n    errors=kwds.get(\"encoding_errors\", \"strict\"),\n  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/io/common.py\", line 707, in get_handle\n    newline=\"\",\nFileNotFoundError: [Errno 2] No such file or directory: 'test_data.csv'\n"
+    }
+  ]
+}

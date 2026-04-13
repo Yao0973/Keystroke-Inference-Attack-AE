@@ -1,0 +1,17 @@
+name: keystroke-artifact
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip=24.0
+  - numpy=1.26.4
+  - pandas=2.1.4
+  - scipy=1.11.4
+  - matplotlib=3.8.2
+  - seaborn=0.13.2
+  - scikit-learn=1.4.2
+  - tqdm=4.66.5
+  - psutil=5.9.8
+  - pip:
+      - torch==2.2.2
+      - torchvision==0.17.2

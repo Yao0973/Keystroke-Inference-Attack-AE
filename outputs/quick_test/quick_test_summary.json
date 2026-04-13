@@ -1,0 +1,22 @@
+{
+  "feature_extraction": {
+    "num_columns": 37,
+    "num_rows": 1,
+    "output_file": "outputs/quick_test/tables/extracted_features_163589.csv",
+    "script": "keystroke_segmentation+feature_extraction.py"
+  },
+  "generated_figures": {
+    "pdf": "outputs/quick_test/figures/figure1_confusion_matrix.pdf",
+    "png": "outputs/quick_test/figures/figure1_confusion_matrix.png"
+  },
+  "single_digit_classifier": {
+    "top1_accuracy_pct": 73.0667,
+    "top3_accuracy_pct": 98.1667
+  },
+  "six_digit_joint_inference": {
+    "joint_accuracy_pct": 70.3333,
+    "lambda": 1.5,
+    "mlp_accuracy_pct": 20.3333,
+    "top_k": 3
+  }
+}

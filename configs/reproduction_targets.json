@@ -1,0 +1,48 @@
+{
+  "paper_title": "Exploiting Body-Coupled Leakage for Keystroke Inference on Smartphones",
+  "assumptions": [
+    "The original repository does not encode the final camera-ready table and figure numbering.",
+    "Table 1 is mapped to single-keystroke classification metrics on test_data.csv.",
+    "Table 2 is mapped to PIN reconstruction accuracy across the bundled 4/6/8/11/16-digit datasets.",
+    "Figure 1 is mapped to the confusion matrix generated from test_data.csv.",
+    "The ablation target compares MLP-only and joint-inference settings on the bundled 6-digit dataset.",
+    "Core artifact workflows use the released checkpoints already shipped in the repository."
+  ],
+  "targets": {
+    "quick_test": {
+      "script": "scripts/quick_test.sh",
+      "outputs": "outputs/quick_test",
+      "description": "Feature extraction sanity check plus single-digit and 6-digit evaluation."
+    },
+    "table1": {
+      "script": "scripts/reproduce_table1.sh",
+      "outputs": "outputs/table1",
+      "description": "Single-keystroke classification metrics and per-digit recall."
+    },
+    "table2": {
+      "script": "scripts/reproduce_table2.sh",
+      "outputs": "outputs/table2",
+      "description": "PIN reconstruction metrics across the bundled multi-digit datasets."
+    },
+    "figure1": {
+      "script": "scripts/reproduce_figure1.sh",
+      "outputs": "outputs/figure1",
+      "description": "Confusion matrix generated from the shipped classifier and test_data.csv."
+    },
+    "ablation": {
+      "script": "scripts/reproduce_ablation.sh",
+      "outputs": "outputs/ablation",
+      "description": "6-digit MLP-only versus joint-inference comparison."
+    },
+    "robustness": {
+      "script": "scripts/reproduce_robustness.sh",
+      "outputs": "outputs/robustness",
+      "description": "Hand-size and battery/background-load robustness summaries."
+    },
+    "main_results": {
+      "script": "scripts/reproduce_main_results.sh",
+      "outputs": "outputs/main_results",
+      "description": "Runs all packaged released-checkpoint reproduction targets."
+    }
+  }
+}

@@ -1,0 +1,7 @@
+hand_size,posture,joint_accuracy_pct,mlp_accuracy_pct
+small,high_arch,64.0,12.0
+small,low_profile,70.0,12.0
+medium,high_arch,66.0,20.0
+medium,low_profile,82.0,22.0
+large,high_arch,52.0,14.0
+large,low_profile,74.0,18.0

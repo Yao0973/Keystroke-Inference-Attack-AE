@@ -1,0 +1,6 @@
+pin_length,dataset,num_samples,mlp_accuracy_pct,joint_accuracy_pct,top_k,lambda
+4,full_test_data_4digit.csv,300,27.0,74.3333,3,1.5
+6,full_test_data_6digit.csv,300,20.3333,70.3333,3,1.5
+8,full_test_data_8digit.csv,300,8.6667,61.6667,3,1.5
+11,full_test_data_11digit.csv,300,6.6667,55.0,3,1.5
+16,full_test_data_16digit.csv,300,0.3333,41.0,3,1.5

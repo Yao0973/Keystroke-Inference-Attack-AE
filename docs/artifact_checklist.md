@@ -13,11 +13,11 @@
 ## What a Reviewer Can Reproduce
 
 - A quick end-to-end sanity check via `scripts/quick_test.sh`
-- Single-keystroke classification metrics and per-digit recall
-- PIN reconstruction accuracy across the included 4/6/8/11/16-digit datasets
-- Confusion-matrix figure generated from the shipped classifier and `data/classification/test_data.csv`
-- 6-digit ablation comparing MLP-only and joint-inference settings
-- Hand-size and battery/background-load robustness summaries
+- Paper Figure 9: single-keystroke confusion matrix, Top-1, Top-3, and per-digit recall
+- Paper Figure 10(a): PIN reconstruction accuracy across the included 4/6/8/11/16-digit datasets
+- Paper Table 1: 4/6/8-digit attack success rates within 1-5 attempts
+- Appendix Table 7: 6-digit component ablation values
+- Paper Figure 11(a-b) subset: hand-size/posture and battery/background-load robustness summaries
 
 ## What Requires Larger Compute or More Time
 
@@ -41,14 +41,16 @@ The packaged released-checkpoint evaluation itself does not require network acce
 
 ## Outputs That Should Match the Paper
 
-The artifact currently assumes the following placeholder mapping:
+The artifact currently documents the following reproduction-target mapping checked against `ccs2026a-paper1084.pdf`:
 
-- Table 1: single-keystroke classification metrics
-- Table 2: PIN reconstruction metrics across included PIN lengths
-- Figure 1: single-keystroke confusion matrix
-- Ablation: 6-digit MLP-only vs joint-inference comparison
+- Table 1: attack success rate within N attempts for 4/6/8-digit PINs
+- Figure 9: single-keystroke confusion matrix
+- Figure 10(a): MLP-only and physics-guided recovery across sequence lengths
+- Figure 11(a-b): bundled robustness subset
+- Appendix Table 7: morphology/spatial/temporal ablation
+- Table 2: related-work comparison, not a computational reproduction target
 
-Replace these placeholders with final camera-ready numbering before submission if needed.
+Figures 11(c-d), 12, 13, 15, 16, and 17 require additional device/charger/physical-variation or training-sweep artifacts and are not part of the core released-checkpoint AEC workflow.
 
 ## Expected Numeric Tolerance
 

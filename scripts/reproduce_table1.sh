@@ -9,6 +9,6 @@ export XDG_CACHE_HOME="${ROOT_DIR}/.artifact_cache"
 export MPLCONFIGDIR="${ROOT_DIR}/.artifact_cache/matplotlib"
 mkdir -p "${MPLCONFIGDIR}"
 
-echo "[artifact] Reproducing Table 1 placeholder results..."
+echo "[artifact] Reproducing paper Table 1..."
 python3 -m keystroke_artifact.runner table1 --output-dir "${ROOT_DIR}/outputs/table1"
 echo "[artifact] Table 1 reproduction finished successfully."

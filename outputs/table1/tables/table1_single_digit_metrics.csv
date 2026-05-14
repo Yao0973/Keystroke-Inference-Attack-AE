@@ -1,2 +1,0 @@
-dataset,num_samples,top1_accuracy_pct,top3_accuracy_pct
-test_data.csv,3000,73.0667,98.1667

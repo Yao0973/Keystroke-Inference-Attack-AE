@@ -2,7 +2,7 @@
 
 This repository has been repackaged as an ACM CCS-style artifact-evaluation bundle for a security/AI-agent paper on keystroke/PIN inference. The artifact keeps the original research scripts intact for provenance, but adds a reviewer-friendly execution layer under `scripts/`, `src/`, `docs/`, and `configs/` so an external evaluator can run a quick sanity check and reproduce the main released-checkpoint results with minimal setup.
 
-The artifact is intentionally conservative. It does not invent missing datasets, results, or figure numbering. Where the original flat repository did not encode the final camera-ready table/figure mapping, this artifact uses explicit placeholders and marks those assumptions in [configs/reproduction_targets.json](/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/configs/reproduction_targets.json) and [docs/repository_inventory.md](/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/docs/repository_inventory.md).
+The artifact is intentionally conservative. It does not invent missing datasets, results, or figure numbering. Where the original flat repository did not encode the final camera-ready table/figure mapping, this artifact uses explicit documented assumptions in [configs/reproduction_targets.json](configs/reproduction_targets.json) and [docs/repository_inventory.md](docs/repository_inventory.md).
 
 ## Project Overview
 
@@ -20,8 +20,8 @@ Core artifact entry points:
 - `scripts/quick_test.sh`
 - `scripts/reproduce_main_results.sh`
 - `scripts/reproduce_table1.sh`
-- `scripts/reproduce_table2.sh`
-- `scripts/reproduce_figure1.sh`
+- `scripts/reproduce_figure9.sh`
+- `scripts/reproduce_figure10.sh`
 - `scripts/reproduce_ablation.sh`
 - `scripts/reproduce_robustness.sh`
 
@@ -66,7 +66,7 @@ Recommended software environment:
 - Package manager: `pip` or `conda`
 - Container option: Docker with a recent Linux host
 
-Exact pinned Python package versions for the artifact path are in [requirements.txt](/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/requirements.txt) and [environment.yml](/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/environment.yml).
+Exact pinned Python package versions for the artifact path are in [requirements.txt](requirements.txt) and [environment.yml](environment.yml).
 
 ## Hardware Requirements
 
@@ -152,8 +152,8 @@ Individual targets:
 
 ```bash
 bash scripts/reproduce_table1.sh
-bash scripts/reproduce_table2.sh
-bash scripts/reproduce_figure1.sh
+bash scripts/reproduce_figure9.sh
+bash scripts/reproduce_figure10.sh
 bash scripts/reproduce_ablation.sh
 bash scripts/reproduce_robustness.sh
 ```
@@ -164,8 +164,8 @@ Approximate runtimes on a 4-core CPU-only machine:
 
 - `scripts/quick_test.sh`: 5 minutes or less in typical conditions
 - `scripts/reproduce_table1.sh`: under 2 minutes
-- `scripts/reproduce_table2.sh`: under 10 minutes
-- `scripts/reproduce_figure1.sh`: under 2 minutes
+- `scripts/reproduce_figure9.sh`: under 2 minutes
+- `scripts/reproduce_figure10.sh`: under 10 minutes
 - `scripts/reproduce_ablation.sh`: under 10 minutes
 - `scripts/reproduce_robustness.sh`: 10 to 30 minutes
 - `scripts/reproduce_main_results.sh`: 20 to 45 minutes
@@ -174,18 +174,20 @@ These are practical estimates, not hard guarantees.
 
 ## Script-to-Paper Mapping
 
-Because the repository does not encode the final camera-ready numbering, the following mappings are placeholders and should be updated before archival submission if the paper uses different identifiers:
+The following mappings were checked against `ccs2026a-paper1084.pdf`:
 
-| Script | Placeholder Paper Object | Output Directory | Notes |
+| Script | Reproduced Object | Output Directory | Notes |
 | --- | --- | --- | --- |
-| `scripts/reproduce_table1.sh` | Table 1 | `outputs/table1/` | Single-keystroke classification metrics |
-| `scripts/reproduce_table2.sh` | Table 2 | `outputs/table2/` | PIN reconstruction across 4/6/8/11/16-digit datasets |
-| `scripts/reproduce_figure1.sh` | Figure 1 | `outputs/figure1/` | Confusion matrix generated from `data/classification/test_data.csv` |
-| `scripts/reproduce_ablation.sh` | Ablation | `outputs/ablation/` | 6-digit MLP-only vs joint-inference comparison |
-| `scripts/reproduce_robustness.sh` | Robustness appendix / extra results | `outputs/robustness/` | Hand-size and battery/background-load evaluations |
+| `scripts/reproduce_table1.sh` | Table 1 | `outputs/table1/` | Attack success rate within 1-5 attempts for 4/6/8-digit PINs |
+| `scripts/reproduce_figure9.sh` | Figure 9 | `outputs/figure9/` | Confusion matrix generated from `data/classification/test_data.csv` |
+| `scripts/reproduce_figure10.sh` | Figure 10(a) | `outputs/figure10/` | MLP-only and physics-guided recovery across 4/6/8/11/16-digit sequences |
+| `scripts/reproduce_ablation.sh` | Appendix Table 7 | `outputs/table7_ablation/` | Morphology/spatial/temporal ablation on 6-digit PIN recovery |
+| `scripts/reproduce_robustness.sh` | Figure 11(a-b) subset | `outputs/robustness/` | Hand-size/posture and battery/background-load robustness bundled with this artifact |
 | `scripts/reproduce_main_results.sh` | Main released-checkpoint artifact package | `outputs/main_results/` | Runs all packaged targets above |
 
-See [configs/reproduction_targets.json](/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/configs/reproduction_targets.json) for the same mapping in machine-readable form.
+Paper Table 2 is a related-work comparison table rather than a computational result. Figures 11(c-d), 12, 13, 15, 16, and 17 depend on additional device/charger/physical-variation or training-sweep artifacts that are discussed in the paper but are not fully bundled as primary AEC reproduction targets.
+
+See [configs/reproduction_targets.json](configs/reproduction_targets.json) for the same mapping in machine-readable form.
 
 ## Expected Outputs
 
@@ -209,13 +211,13 @@ Key findings from the repository audit:
 - Included checkpoints: `checkpoints/models/keystroke_morphology_mlp.pth`, `checkpoints/models/norm_params.pth`, `checkpoints/models/kinematic_params.pth`
 - Plot/table generation status: several legacy plot scripts were interactive or partially hard-coded, so the artifact package now generates table/figure outputs through the new runner instead
 
-Detailed inventory and identified blockers are in [docs/repository_inventory.md](/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/docs/repository_inventory.md).
+Detailed inventory and identified blockers are in [docs/repository_inventory.md](docs/repository_inventory.md).
 
 ## Troubleshooting
 
 ### `ModuleNotFoundError: No module named 'numpy._core'`
 
-Some bundled legacy `.pth` files were serialized in an environment that references `numpy._core`. This artifact includes [sitecustomize.py](/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/sitecustomize.py) to help legacy scripts, and the new artifact runner avoids depending on those serialized auxiliary files by recomputing the needed statistics from the bundled training CSVs.
+Some bundled legacy `.pth` files were serialized in an environment that references `numpy._core`. This artifact includes [sitecustomize.py](sitecustomize.py) to help legacy scripts, and the new artifact runner avoids depending on those serialized auxiliary files by recomputing the needed statistics from the bundled training CSVs.
 
 ### Matplotlib or font-cache permission warnings
 
@@ -232,7 +234,7 @@ The core AEC path is checkpoint-based. Training scripts are preserved, but exact
 ## Limitations and Nondeterminism
 
 - The packaged artifact reproduces the released-checkpoint evaluation path, not a full from-scratch retraining campaign.
-- The original repository does not encode the final paper table/figure numbering. Placeholder mappings are documented and should be updated before final submission.
+- The computational reproduction targets are mapped to the submitted paper numbering above; some qualitative/setup and related-work figures are documented but not regenerated by the core AEC workflow.
 - Several legacy plot scripts remain presentation-oriented and are not used as the primary AEC entry points.
 - Training-related experiments may show small variation if run manually outside the packaged artifact path.
 
@@ -244,7 +246,7 @@ The core AEC path is checkpoint-based. Training scripts are preserved, but exact
 
 ## Additional Documentation
 
-- [docs/repository_inventory.md](/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/docs/repository_inventory.md)
-- [docs/artifact_checklist.md](/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/docs/artifact_checklist.md)
-- [docs/zenodo_release_notes.md](/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/docs/zenodo_release_notes.md)
-- [docs/aec_response_template.md](/Users/an/Downloads/Keystroke-Inference-Attack-Code-master/docs/aec_response_template.md)
+- [docs/repository_inventory.md](docs/repository_inventory.md)
+- [docs/artifact_checklist.md](docs/artifact_checklist.md)
+- [docs/zenodo_release_notes.md](docs/zenodo_release_notes.md)
+- [docs/aec_response_template.md](docs/aec_response_template.md)

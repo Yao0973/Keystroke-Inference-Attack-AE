@@ -21,7 +21,8 @@ COPY configs ./configs
 COPY legacy ./legacy
 COPY data ./data
 COPY checkpoints ./checkpoints
-COPY outputs ./outputs
+COPY outputs/README.md ./outputs/README.md
+COPY outputs/precomputed ./outputs/precomputed
 
 RUN python -m pip install --upgrade pip setuptools wheel && \
     pip install -r requirements.txt && \

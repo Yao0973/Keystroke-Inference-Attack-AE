@@ -1,8 +1,0 @@
-{
-  "figure_paths": {
-    "pdf": "outputs/main_results/figure1/figures/figure1_confusion_matrix.pdf",
-    "png": "outputs/main_results/figure1/figures/figure1_confusion_matrix.png"
-  },
-  "source_dataset": "test_data.csv",
-  "top1_accuracy_pct": 73.0667
-}

@@ -471,7 +471,7 @@ def run_feature_extraction(output_dir: Path) -> Dict:
 
     log_dir = ensure_directory(output_dir / "logs")
     log_path = log_dir / "feature_extraction.log"
-    command = [sys.executable, str(script_path)]
+    command = [sys.executable, str(script_path.relative_to(REPO_ROOT))]
     env = os.environ.copy()
     env.setdefault("PYTHONPATH", str(REPO_ROOT / "src"))
     env.setdefault("XDG_CACHE_HOME", str(MODULE_CACHE_ROOT))
@@ -518,8 +518,8 @@ def plot_confusion_matrix(metrics: Dict, output_dir: Path) -> Dict[str, str]:
     percent = np.divide(matrix, row_sums, out=np.zeros_like(matrix), where=row_sums != 0) * 100.0
 
     figure_dir = ensure_directory(output_dir / "figures")
-    png_path = figure_dir / "figure1_confusion_matrix.png"
-    pdf_path = figure_dir / "figure1_confusion_matrix.pdf"
+    png_path = figure_dir / "figure9_confusion_matrix.png"
+    pdf_path = figure_dir / "figure9_confusion_matrix.pdf"
 
     plt.figure(figsize=(8, 4.5))
     sns.heatmap(

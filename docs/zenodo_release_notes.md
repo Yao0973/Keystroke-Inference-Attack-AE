@@ -49,10 +49,11 @@ This artifact is the evaluation package associated with the accepted conference 
 - `configs/`
 - `data/`
 - `checkpoints/`
-- any precomputed `.npz` or `.json` files needed for provenance
+- `outputs/README.md` and `outputs/precomputed/` files needed for provenance
 
 ## Notes Before Upload
 
-- Replace all `TODO` placeholders.
+- Confirm that all release-specific fields are final.
 - Confirm that the final archival snapshot matches the camera-ready paper numbering.
 - Verify that no private data or accidental local-only files are present.
+- Do not include local regression logs or transient cache directories such as `outputs/regression/`, `.artifact_cache/`, or `__pycache__/` in the archival release.

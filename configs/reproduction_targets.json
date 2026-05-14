@@ -1,11 +1,12 @@
 {
   "paper_title": "Exploiting Body-Coupled Leakage for Keystroke Inference on Smartphones",
   "assumptions": [
-    "The original repository does not encode the final camera-ready table and figure numbering.",
-    "Table 1 is mapped to single-keystroke classification metrics on test_data.csv.",
-    "Table 2 is mapped to PIN reconstruction accuracy across the bundled 4/6/8/11/16-digit datasets.",
-    "Figure 1 is mapped to the confusion matrix generated from test_data.csv.",
-    "The ablation target compares MLP-only and joint-inference settings on the bundled 6-digit dataset.",
+    "Mappings were checked against ccs2026a-paper1084.pdf.",
+    "Figure 9 is the single-keystroke confusion matrix on test_data.csv.",
+    "Figure 10(a) is the PIN recovery rate across the bundled 4/6/8/11/16-digit datasets.",
+    "Table 1 is the attack success rate within N attempts for 4/6/8-digit PINs.",
+    "Appendix Table 7 is the ablation study of morphology, spatial, and temporal constraints.",
+    "Paper Table 2 is a related-work comparison table and is not a computational reproduction target.",
     "Core artifact workflows use the released checkpoints already shipped in the repository."
   ],
   "targets": {
@@ -17,22 +18,22 @@
     "table1": {
       "script": "scripts/reproduce_table1.sh",
       "outputs": "outputs/table1",
-      "description": "Single-keystroke classification metrics and per-digit recall."
+      "description": "Paper Table 1: attack success rate within N attempts for 4/6/8-digit PINs."
     },
-    "table2": {
-      "script": "scripts/reproduce_table2.sh",
-      "outputs": "outputs/table2",
-      "description": "PIN reconstruction metrics across the bundled multi-digit datasets."
+    "figure9": {
+      "script": "scripts/reproduce_figure9.sh",
+      "outputs": "outputs/figure9",
+      "description": "Paper Figure 9: confusion matrix and Top-1/Top-3 metrics on D_morph."
     },
-    "figure1": {
-      "script": "scripts/reproduce_figure1.sh",
-      "outputs": "outputs/figure1",
-      "description": "Confusion matrix generated from the shipped classifier and test_data.csv."
+    "figure10": {
+      "script": "scripts/reproduce_figure10.sh",
+      "outputs": "outputs/figure10",
+      "description": "Paper Figure 10(a): MLP-only and physics-guided recovery versus sequence length."
     },
     "ablation": {
       "script": "scripts/reproduce_ablation.sh",
-      "outputs": "outputs/ablation",
-      "description": "6-digit MLP-only versus joint-inference comparison."
+      "outputs": "outputs/table7_ablation",
+      "description": "Appendix Table 7: component ablation on 6-digit PIN recovery."
     },
     "robustness": {
       "script": "scripts/reproduce_robustness.sh",

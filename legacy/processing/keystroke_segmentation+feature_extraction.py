@@ -157,7 +157,7 @@ def extract_5_features_and_time(times, envelope, lk, pk, rk, fs=10000):
 def main():
     RAW_FILE = RAW_DATA_ROOT / "PIN_163589.csv"
     OUTPUT_FILE = DERIVED_DATA_ROOT / "extracted_features_163589.csv"
-    REAL_PIN = "163589"      # ←←← CHANGE THIS TO YOUR ACTUAL PIN
+    REAL_PIN = "163589"      # Bundled example PIN label used by the packaged trace.
     FS = 10000               # Sampling rate in Hz (confirmed from plot)
     TARGET_DIGITS = 6
     DERIVED_DATA_ROOT.mkdir(parents=True, exist_ok=True)
@@ -210,7 +210,7 @@ def main():
         writer = csv.writer(f)
         writer.writerow(row)
 
-    print(f"[SUCCESS] Saved to {OUTPUT_FILE}")
+    print(f"[SUCCESS] Saved to {OUTPUT_FILE.relative_to(REPO_ROOT)}")
     print(f"Columns: 1 (PIN) + 6 (timestamps) + 30 (features) = 37")
 
 if __name__ == "__main__":

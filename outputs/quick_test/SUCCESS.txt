@@ -1,4 +1,0 @@
-Quick test completed successfully.
-- Single-digit Top-1 accuracy: 73.07%
-- Single-digit Top-3 accuracy: 98.17%
-- 6-digit joint accuracy: 70.33%

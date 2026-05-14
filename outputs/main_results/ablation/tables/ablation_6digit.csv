@@ -1,4 +1,0 @@
-setting,use_kinematic,top_k,mlp_accuracy_pct,joint_accuracy_pct
-mlp_only,False,3,20.3333,20.3333
-joint_top3,True,3,20.3333,70.3333
-joint_top10,True,10,20.3333,71.6667

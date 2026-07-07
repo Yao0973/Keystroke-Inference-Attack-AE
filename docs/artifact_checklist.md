@@ -14,7 +14,7 @@
 
 - A quick end-to-end sanity check via `scripts/quick_test.sh`
 - Paper Figure 9: single-keystroke confusion matrix, Top-1, Top-3, and per-digit recall
-- Paper Figure 10(a): PIN reconstruction accuracy across the included 4/6/8/11/16-digit datasets
+- Paper Figure 10: sequence-length recovery and Top-k sensitivity plots
 - Paper Table 1: 4/6/8-digit attack success rates within 1-5 attempts
 - Appendix Table 7: 6-digit component ablation values
 - Paper Figure 11(a-b) subset: hand-size/posture and battery/background-load robustness summaries
@@ -45,7 +45,7 @@ The artifact currently documents the following reproduction-target mapping check
 
 - Table 1: attack success rate within N attempts for 4/6/8-digit PINs
 - Figure 9: single-keystroke confusion matrix
-- Figure 10(a): MLP-only and physics-guided recovery across sequence lengths
+- Figure 10: MLP-only and physics-guided recovery across sequence lengths, plus Top-k sensitivity
 - Figure 11(a-b): bundled robustness subset
 - Appendix Table 7: morphology/spatial/temporal ablation
 - Table 2: related-work comparison, not a computational reproduction target

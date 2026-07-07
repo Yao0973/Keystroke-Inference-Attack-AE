@@ -25,6 +25,7 @@ New artifact-facing entry points added in this packaging pass:
 - `scripts/reproduce_table1.sh`
 - `scripts/reproduce_figure9.sh`
 - `scripts/reproduce_figure10.sh`
+- `scripts/plot_figure10.py`
 - `scripts/reproduce_ablation.sh`
 - `scripts/reproduce_robustness.sh`
 - `python3 -m keystroke_artifact.runner ...`

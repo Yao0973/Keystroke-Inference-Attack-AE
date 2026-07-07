@@ -25,6 +25,7 @@ from .common import (
     plot_ablation,
     plot_battery_background,
     plot_confusion_matrix,
+    plot_figure10,
     plot_hand_size,
     run_feature_extraction,
     save_json,
@@ -169,7 +170,7 @@ def command_figure9(output_dir: Path) -> dict:
 
 
 def command_figure10(output_dir: Path) -> dict:
-    """Reproduce the Fig. 10(a) sequence-length recovery data."""
+    """Reproduce paper Figure 10 data and plots."""
     ensure_directory(output_dir)
     rows = []
     for pin_length, dataset_path in PIN_DATASETS.items():
@@ -191,12 +192,35 @@ def command_figure10(output_dir: Path) -> dict:
         )
     frame = pd.DataFrame(rows).sort_values("pin_length").reset_index(drop=True)
     save_table(output_dir / "tables" / "figure10_sequence_length_recovery.csv", frame)
+
+    topk_rows = []
+    for pin_length in [4, 6, 8]:
+        for top_k in range(1, 11):
+            metrics = evaluate_pin_dataset(
+                PIN_DATASETS[pin_length],
+                pin_length=pin_length,
+                top_k=top_k,
+                lambda_value=1.5,
+            )
+            topk_rows.append(
+                {
+                    "pin_length": pin_length,
+                    "top_k": top_k,
+                    "joint_accuracy_pct": metrics["joint_accuracy_pct"],
+                    "mlp_accuracy_pct": metrics["mlp_accuracy_pct"],
+                }
+            )
+    topk_frame = pd.DataFrame(topk_rows)
+    save_table(output_dir / "tables" / "figure10_topk_sensitivity.csv", topk_frame)
+    figure_paths = plot_figure10(frame, topk_frame, output_dir)
     payload = {
-        "paper_object": "Figure 10(a)",
-        "description": "Recovery rate versus sequence length for MLP-only and physics-guided decoding.",
+        "paper_object": "Figure 10",
+        "description": "Recovery rate versus sequence length and Top-k candidate set size.",
         "rows": frame.to_dict(orient="records"),
+        "topk_rows": topk_frame.to_dict(orient="records"),
+        "figure_paths": figure_paths,
     }
-    save_json(output_dir / "figure10_sequence_length_recovery.json", payload)
+    save_json(output_dir / "figure10_performance.json", payload)
     return payload
 
 

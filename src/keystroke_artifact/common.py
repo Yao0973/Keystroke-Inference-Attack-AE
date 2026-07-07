@@ -546,6 +546,161 @@ def plot_confusion_matrix(metrics: Dict, output_dir: Path) -> Dict[str, str]:
     }
 
 
+def plot_figure10(
+    length_frame: pd.DataFrame,
+    topk_frame: pd.DataFrame,
+    output_dir: Path,
+    single_key_top1_pct: float = 73.0,
+) -> Dict[str, str]:
+    figure_dir = ensure_directory(output_dir / "figures")
+    png_path = figure_dir / "figure10_performance.png"
+    pdf_path = figure_dir / "figure10_performance.pdf"
+
+    length_plot = length_frame.sort_values("pin_length").copy()
+    length_plot["theoretical_mlp_pct"] = (
+        (single_key_top1_pct / 100.0) ** length_plot["pin_length"] * 100.0
+    )
+
+    topk_plot = topk_frame.sort_values(["pin_length", "top_k"]).copy()
+
+    fig, axes = plt.subplots(1, 2, figsize=(10.6, 4.0))
+
+    x_positions = np.arange(len(length_plot))
+    bar_width = 0.24
+    bars_theory = axes[0].bar(
+        x_positions - bar_width,
+        length_plot["theoretical_mlp_pct"],
+        width=bar_width,
+        label="Theoretical Expectation",
+        facecolor="#f7fff0",
+        edgecolor="#6aa84f",
+        hatch="....",
+        linewidth=1.0,
+    )
+    bars_mlp = axes[0].bar(
+        x_positions,
+        length_plot["mlp_accuracy_pct"],
+        width=bar_width,
+        label="MLP-Only",
+        facecolor="#f7fbff",
+        edgecolor="#1f77b4",
+        hatch="////",
+        linewidth=1.0,
+    )
+    bars_ours = axes[0].bar(
+        x_positions + bar_width,
+        length_plot["joint_accuracy_pct"],
+        width=bar_width,
+        label="Ours (Physical-Aware)",
+        facecolor="#fffafa",
+        edgecolor="#d62728",
+        hatch="xxxx",
+        linewidth=1.0,
+    )
+    for bar_group in [bars_theory, bars_mlp, bars_ours]:
+        labels = axes[0].bar_label(bar_group, fmt="%.1f", padding=2, fontsize=8)
+        for label in labels:
+            label.set_fontfamily("serif")
+    axes[0].set_xlabel("Sequence Length", fontsize=12, fontfamily="serif")
+    axes[0].set_ylabel("Success Rate (%)", fontsize=12, fontfamily="serif")
+    axes[0].set_xticks(x_positions)
+    axes[0].set_xticklabels([f"{int(value)}-digit" for value in length_plot["pin_length"]])
+    axes[0].set_ylim(0, 100)
+    axes[0].tick_params(axis="both", labelsize=9)
+    axes[0].grid(True, axis="y", linestyle="-", linewidth=0.5, alpha=0.35)
+    axes[0].legend(
+        handles=[bars_theory, bars_mlp, bars_ours],
+        labels=["Theoretical Expectation", "MLP-Only", "Ours (Physical-Aware)"],
+        frameon=True,
+        prop={"family": "serif", "size": 8.5},
+        loc="upper center",
+        bbox_to_anchor=(0.52, 1.005),
+        ncol=2,
+        borderpad=0.25,
+        handlelength=1.3,
+        handletextpad=0.25,
+        columnspacing=0.7,
+    )
+    if 6 in set(length_plot["pin_length"]):
+        six_index = int(length_plot.index[length_plot["pin_length"] == 6][0])
+        six_mlp = float(length_plot.loc[six_index, "mlp_accuracy_pct"])
+        six_ours = float(length_plot.loc[six_index, "joint_accuracy_pct"])
+        boost = six_ours / six_mlp if six_mlp else 0.0
+        x_arrow = six_index + bar_width
+        axes[0].annotate(
+            "",
+            xy=(x_arrow, six_ours - 2),
+            xytext=(x_arrow, six_mlp + 2),
+            arrowprops={"arrowstyle": "<->", "linestyle": "--", "color": "black", "linewidth": 0.8},
+        )
+        axes[0].text(
+            x_arrow - 0.08,
+            (six_ours + six_mlp) / 2 + 1.2,
+            f"~{boost:.2f}x Boost",
+            fontsize=8,
+            fontfamily="serif",
+            fontweight="bold",
+            ha="right",
+            va="center",
+        )
+
+    line_styles = {
+        4: {"color": "#2ca02c", "marker": "o", "label": "4-digit Sequence"},
+        6: {"color": "#1f77b4", "marker": "s", "label": "6-digit Sequence"},
+        8: {"color": "#d62728", "marker": "^", "label": "8-digit Sequence"},
+    }
+    for pin_length, group in topk_plot.groupby("pin_length"):
+        style = line_styles.get(int(pin_length), {"marker": "o", "label": f"{int(pin_length)}-digit Sequence"})
+        axes[1].plot(
+            group["top_k"],
+            group["joint_accuracy_pct"],
+            marker=style["marker"],
+            linewidth=1.3,
+            markersize=3.6,
+            markerfacecolor="white",
+            markeredgewidth=1.0,
+            label=style["label"],
+            color=style.get("color"),
+        )
+    axes[1].set_xlabel("Top-k (Candidate Set Size)", fontsize=12, fontfamily="serif")
+    axes[1].set_ylabel("Success Rate (%)", fontsize=12, fontfamily="serif")
+    axes[1].set_xticks(sorted(topk_plot["top_k"].unique().tolist()))
+    axes[1].set_ylim(0, 80)
+    axes[1].tick_params(axis="both", labelsize=9)
+    axes[1].grid(True, linestyle="--", linewidth=0.5, alpha=0.35)
+    axes[1].legend(
+        frameon=True,
+        prop={"family": "serif", "size": 8.5},
+        loc="lower right",
+        borderpad=0.45,
+        handlelength=2.0,
+        handletextpad=0.6,
+    )
+    axes[1].annotate(
+        r"Performance saturates at $k \geq 3$",
+        xy=(3, 61.6667),
+        xytext=(2.65, 48.5),
+        arrowprops={"arrowstyle": "->", "color": "black", "linewidth": 0.8},
+        fontsize=8.5,
+        fontfamily="serif",
+        fontweight="bold",
+    )
+
+    for axis in axes:
+        for tick_label in axis.get_xticklabels() + axis.get_yticklabels():
+            tick_label.set_fontfamily("serif")
+
+    fig.subplots_adjust(left=0.065, right=0.985, top=0.91, bottom=0.22, wspace=0.25)
+    plt.savefig(png_path, dpi=300)
+    plt.savefig(pdf_path)
+    plt.close(fig)
+
+    return {
+        "png": str(png_path.relative_to(REPO_ROOT)),
+        "pdf": str(pdf_path.relative_to(REPO_ROOT)),
+    }
+
+
 def plot_ablation(frame: pd.DataFrame, output_dir: Path) -> Dict[str, str]:
     figure_dir = ensure_directory(output_dir / "figures")
     png_path = figure_dir / "ablation_6digit.png"

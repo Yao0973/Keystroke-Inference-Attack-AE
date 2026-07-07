@@ -180,12 +180,23 @@ The following mappings were checked against `ccs2026a-paper1084.pdf`:
 | --- | --- | --- | --- |
 | `scripts/reproduce_table1.sh` | Table 1 | `outputs/table1/` | Attack success rate within 1-5 attempts for 4/6/8-digit PINs |
 | `scripts/reproduce_figure9.sh` | Figure 9 | `outputs/figure9/` | Confusion matrix generated from `data/classification/test_data.csv` |
-| `scripts/reproduce_figure10.sh` | Figure 10(a) | `outputs/figure10/` | MLP-only and physics-guided recovery across 4/6/8/11/16-digit sequences |
+| `scripts/reproduce_figure10.sh` | Figure 10 | `outputs/figure10/` | Sequence-length recovery and Top-k sensitivity plots |
 | `scripts/reproduce_ablation.sh` | Appendix Table 7 | `outputs/table7_ablation/` | Morphology/spatial/temporal ablation on 6-digit PIN recovery |
 | `scripts/reproduce_robustness.sh` | Figure 11(a-b) subset | `outputs/robustness/` | Hand-size/posture and battery/background-load robustness bundled with this artifact |
 | `scripts/reproduce_main_results.sh` | Main released-checkpoint artifact package | `outputs/main_results/` | Runs all packaged targets above |
 
 Paper Table 2 is a related-work comparison table rather than a computational result. Figures 11(c-d), 12, 13, 15, 16, and 17 depend on additional device/charger/physical-variation or training-sweep artifacts that are discussed in the paper but are not fully bundled as primary AEC reproduction targets.
+
+`scripts/reproduce_figure10.sh` first regenerates the Figure 10 CSV/JSON data and then calls the plotting script:
+
+```bash
+python3 scripts/plot_figure10.py \
+  --length-csv outputs/figure10/tables/figure10_sequence_length_recovery.csv \
+  --topk-csv outputs/figure10/tables/figure10_topk_sensitivity.csv \
+  --output-dir outputs/figure10
+```
+
+The resulting figure files are `outputs/figure10/figures/figure10_performance.png` and `outputs/figure10/figures/figure10_performance.pdf`.
 
 See [configs/reproduction_targets.json](configs/reproduction_targets.json) for the same mapping in machine-readable form.
 

@@ -7,8 +7,8 @@ authors:
   given-names: "Tao"
 - family-names: "Wang"
   given-names: "Yao"
-repository-code: "https://github.com/Yao0973/Keystroke-Inference-Attack-Code"
-url: "https://github.com/Yao0973/Keystroke-Inference-Attack-Code"
+repository-code: "https://github.com/Yao0973/Keystroke-Inference-Attack-AE"
+url: "https://github.com/Yao0973/Keystroke-Inference-Attack-AE/releases/tag/ccs2026-ae-v1.2"
 license: MIT
 preferred-citation:
   type: conference-paper

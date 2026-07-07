@@ -4,6 +4,18 @@ This repository has been repackaged as an ACM CCS-style artifact-evaluation bund
 
 The artifact is intentionally conservative. It does not invent missing datasets, results, or figure numbering. Where the original flat repository did not encode the final camera-ready table/figure mapping, this artifact uses explicit documented assumptions in [configs/reproduction_targets.json](configs/reproduction_targets.json) and [docs/repository_inventory.md](docs/repository_inventory.md).
 
+## Artifact Availability
+
+Public artifact repository:
+
+`https://github.com/Yao0973/Keystroke-Inference-Attack-AE`
+
+Reviewed CCS 2026-A AE snapshot:
+
+`https://github.com/Yao0973/Keystroke-Inference-Attack-AE/releases/tag/ccs2026-ae-v1.2`
+
+For the paper artifact link, cite the archival Zenodo DOI if a final Zenodo record has been minted. If the paper only needs a public code/data URL, use the reviewed GitHub snapshot above; it is public and includes the bundled datasets, released checkpoints, reproduction scripts, plotting scripts, and documentation used by the artifact-evaluation workflow.
+
 ## Project Overview
 
 The repository studies side-channel keystroke inference for PIN entry using signal-processing, keystroke morphology classification, and temporal joint inference.

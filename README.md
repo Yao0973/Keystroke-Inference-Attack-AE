@@ -12,11 +12,11 @@ Public artifact repository:
 
 Archival Zenodo DOI:
 
-`https://doi.org/10.5281/zenodo.21237044`
+`https://doi.org/10.5281/zenodo.21237223`
 
 Reviewed CCS 2026-A AE snapshot:
 
-`https://github.com/Yao0973/Keystroke-Inference-Attack-AE/releases/tag/ccs2026-ae-v1.3`
+`https://github.com/Yao0973/Keystroke-Inference-Attack-AE/releases/tag/ccs2026-ae-v1.4`
 
 For the paper artifact link, cite the archival Zenodo DOI above. The GitHub release is the reviewed source snapshot corresponding to the artifact-evaluation workflow; it is public and includes the bundled datasets, released checkpoints, reproduction scripts, plotting scripts, and documentation.
 

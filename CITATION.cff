@@ -2,13 +2,14 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 type: software
 title: "Exploiting Body-Coupled Leakage for Keystroke Inference on Smartphones"
+doi: "10.5281/zenodo.21237044"
 authors:
 - family-names: "Gu"
   given-names: "Tao"
 - family-names: "Wang"
   given-names: "Yao"
 repository-code: "https://github.com/Yao0973/Keystroke-Inference-Attack-AE"
-url: "https://github.com/Yao0973/Keystroke-Inference-Attack-AE/releases/tag/ccs2026-ae-v1.2"
+url: "https://doi.org/10.5281/zenodo.21237044"
 license: MIT
 preferred-citation:
   type: conference-paper

@@ -1,6 +1,6 @@
 # Exploiting Body-Coupled Leakage for Keystroke Inference on Smartphones
 
-This repository has been repackaged as an ACM CCS-style artifact-evaluation bundle for a security/AI-agent paper on keystroke/PIN inference. The artifact keeps the original research scripts intact for provenance, but adds a reviewer-friendly execution layer under `scripts/`, `src/`, `docs/`, and `configs/` so an external evaluator can run a quick sanity check and reproduce the main released-checkpoint results with minimal setup.
+This repository is an ACM CCS-style artifact-evaluation bundle for the paper *Exploiting Body-Coupled Leakage for Keystroke Inference on Smartphones*. The artifact keeps the original research scripts intact for provenance, but adds a reviewer-friendly execution layer under `scripts/`, `src/`, `docs/`, and `configs/` so an external evaluator can run a quick sanity check and reproduce the main released-checkpoint results with minimal setup.
 
 The artifact is intentionally conservative. It does not invent missing datasets, results, or figure numbering. Where the original flat repository did not encode the final camera-ready table/figure mapping, this artifact uses explicit documented assumptions in [configs/reproduction_targets.json](configs/reproduction_targets.json) and [docs/repository_inventory.md](docs/repository_inventory.md).
 
@@ -173,6 +173,35 @@ bash scripts/reproduce_figure10.sh
 bash scripts/reproduce_ablation.sh
 bash scripts/reproduce_robustness.sh
 ```
+
+## Model and Training Configuration
+
+The paper uses a lightweight MLP to map a five-dimensional keystroke feature vector to probabilities over the ten numeric-key classes. The released artifact contains the implementation and the configuration used for the reported experiments.
+
+| Layer | Input dimension | Output dimension | Activation / normalization | Dropout |
+| --- | ---: | ---: | --- | ---: |
+| FC block 1 | 5 | 64 | ReLU + batch normalization | 0.3 |
+| FC block 2 | 64 | 128 | ReLU + batch normalization | 0.3 |
+| FC block 3 | 128 | 64 | ReLU + batch normalization | 0.2 |
+| Output layer | 64 | 10 | Softmax | — |
+
+| Training parameter | Value |
+| --- | --- |
+| Optimizer | AdamW |
+| Learning rate | 1e-3 |
+| Weight decay | 5e-3 |
+| Learning-rate schedule | CosineAnnealingLR (T_max=35) |
+| Batch size | 128 |
+| Training epochs | 35 |
+| Loss | Weighted cross-entropy |
+| Random seed | 2025 |
+| Reference environment | PyTorch 2.9.1; Intel Core i7-10700 @ 2.90 GHz; 64 GB DDR4 RAM |
+
+### User-independent evaluation protocol
+
+The participant split is performed before model training, rather than at the sample level. Data from 16 participants (8,000 keystroke samples) form the training set; data from six disjoint participants (3,000 keystroke samples) form the held-out test set. This protocol evaluates generalization to unseen participants rather than per-user calibration.
+
+The primary artifact workflow evaluates the released checkpoint on the bundled held-out data. The repository preserves training code and the configuration above, but the artifact does not claim bit-for-bit parity for full retraining across all environments; see [Limitations and Nondeterminism](#limitations-and-nondeterminism).
 
 ## Expected Runtime
 
